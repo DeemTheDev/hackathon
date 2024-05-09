@@ -9,6 +9,8 @@ nltk = "*"
 torch = "*"
 torchvision = "*"
 torchaudio = "*"
+google-generativeai = "*"
+ipython = "*"
 
 [dev-packages]
 
