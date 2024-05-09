@@ -20,17 +20,17 @@ def to_markdown(text):
   text = text.replace('•', '  *')
   return Markdown(textwrap.indent(text, '> ', predicate=lambda _: True))
 
-GOOGLE_API_KEY = os.getenv('GOOGLE_API_KEY')
+GOOGLE_API_KEY = 'AIzaSyAvw5v7lTEkG06xwNTNG69outIzHKV4yO0'
+
 
 genai.configure(api_key=GOOGLE_API_KEY)
 
-for m in genai.list_models():
-  if 'generateContent' in m.supported_generation_methods:
-    print(m.name)
-
 model = genai.GenerativeModel('gemini-pro')
 response = model.generate_content("What is 2 + 2?")
-to_markdown(response.text)
+
+markdown_object = to_markdown(response.text)
+#Convert markdown object to string: 
+print(F"Output: {markdown_object._repr_markdown_()}")
 
 # Commented out IPython magic to ensure Python compatibility.
 # %%time
