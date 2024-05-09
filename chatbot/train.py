@@ -6,8 +6,8 @@ import torch
 import torch.nn as nn
 from torch.utils.data import Dataset, DataLoader
 
-#with open('chatbot/intents.json','r') as f:
-intents = json.load('chatbot/intents.json')
+with open('chatbot/intents.json','r') as f:
+    intents = json.load(f)
 
 all_words = []
 tags = []
