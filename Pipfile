@@ -4,6 +4,13 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
+numpy = "*"
+nltk = "*"
+torch = "*"
+torchvision = "*"
+torchaudio = "*"
+google-generativeai = "*"
+ipython = "*"
 
 [dev-packages]
 
