@@ -25,29 +25,28 @@ GOOGLE_API_KEY = 'AIzaSyAvw5v7lTEkG06xwNTNG69outIzHKV4yO0'
 
 genai.configure(api_key=GOOGLE_API_KEY)
 
-model = genai.GenerativeModel('gemini-pro')
-response = model.generate_content("What is 2 + 2?")
+#model = genai.GenerativeModel('gemini-pro')
+#This part only takes string input as prpmts
+#response = model.generate_content("What is 2 + 2?")
+
+#markdown_object = to_markdown(response.text)
+#Convert markdown object to string: 
+#print(F"Output: {markdown_object._repr_markdown_()}")
+
+#HERE WE USING IMAGES WITH PROMPTS. 
+
+import PIL.Image
+
+#Add your image to disease-diagnosis/images
+img = PIL.Image.open('images/test.png')
+
+
+#Use the gemini pro vision model for image and text input prompts
+model = genai.GenerativeModel('gemini-pro-vision')
+
+response = model.generate_content(["What is in the picture? ",img], stream=True)
+response.resolve()
 
 markdown_object = to_markdown(response.text)
-#Convert markdown object to string: 
 print(F"Output: {markdown_object._repr_markdown_()}")
-
-# Commented out IPython magic to ensure Python compatibility.
-# %%time
-# response = model.generate_content("What is the meaning of life?")
-#
-
-#to_markdown(response.text)
-
-# import PIL.Image
-
-# img = PIL.Image.open('image.jpg')
-# img
-
-# model = genai.GenerativeModel('gemini-pro-vision')
-
-# response = model.generate_content(["What is in the picture? ",img], stream=True)
-# response.resolve()
-
-# to_markdown(response.text)
 
