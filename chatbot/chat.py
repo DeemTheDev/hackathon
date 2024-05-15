@@ -48,8 +48,8 @@ def get_Response(sentence):
         for intent in intents['intents']:
             if tag == intent["tag"]:
                 return random.choice(intent['responses'])
-            else:
-                return "I do not understand"
+            
+    return "I do not understand"
 
 if __name__ == "__main__":
     print("Let's chat! (type 'quit' to exit)")
