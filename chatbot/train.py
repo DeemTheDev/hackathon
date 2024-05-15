@@ -7,7 +7,7 @@ import torch.nn as nn
 from torch.utils.data import Dataset, DataLoader
 
 from model import NeuralNet
-with open('chatbot/intents.json', 'r') as f:
+with open('intents.json', 'r') as f:
     intents = json.load(f)
 
 all_words = []
@@ -118,7 +118,7 @@ data = {
     "tags": tags
 }
 
-FILE = "chatbot/data.pth"
+FILE = "data.pth"
 torch.save(data, FILE)
 
 print(f'training complete: file saved to {FILE}')

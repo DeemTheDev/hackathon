@@ -24,18 +24,15 @@
             </div>
             <div class="chatbox__footer">
                 <input type="text" placeholder="Write a message...">
-                <button class="chatbox__send--footer send__button">Send</button>
+                <button class="chatbox__send--footer send__button" style="background-color: white; color: black;">Send</button>
             </div>
         </div>
         <div class="chatbox__button">
-            <button><img src="{{ url_for('static', filename='images/chatbox-icon.svg') }}" /></button>
+            <button> <img src="{{ url_for('static', filename='images/chatbox-icon.svg') }}" /> </button>
         </div>
     </div>
 </div>
 
-    <script>
-        $SCRIPT_ROOT = {{ request.script_root|tojson }};
-    </script>
     <script type="text/javascript" src="{{ url_for('static', filename='app.js') }}"></script>
 
 </body>
