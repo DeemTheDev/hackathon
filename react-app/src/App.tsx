@@ -17,9 +17,7 @@ function App() {
         <GridItem area={"nav"}>
           <Navbar />
         </GridItem>
-        <GridItem area={"left"}>
-          {/*Animated Text goes here nadeem...*/}
-        </GridItem>
+        <GridItem area={"left"}>{/*Animated Text goes here ...*/}</GridItem>
         <GridItem area={"right"}>
           <LandingAnimation />
         </GridItem>
