@@ -1,3 +1,5 @@
+#all libraries used
+#-------------------------------------------------------------------------------
 import streamlit as st
 from dotenv import load_dotenv
 from PyPDF2 import PdfReader
@@ -7,9 +9,59 @@ from langchain.vectorstores import FAISS
 from langchain_openai import ChatOpenAI
 from langchain.memory import ConversationBufferMemory
 from langchain.chains.conversational_retrieval.base import ConversationalRetrievalChain
-from htmlTemplates import css, bot_template, user_template
+#from htmlTemplates import css, bot_template, user_template
 from langchain_community.llms import huggingface_hub
+import streamlit.components.v1 as components
+#--------------------------------------------------------------------------------
+#html and css layout
+css = '''
+<style>
+.chat-message {
+  padding: 1.5rem; border-radius: 0.5rem; margin-bottom: 1rem; display: flex
+}
+.chat-message.user {
+  background-color: #2b313e
+}
+.chat-message.bot {
+  background-color: #475063
+}
+.chat-message .avatar {
+ width: 20%;
+}
+.chat-message .avatar img {
+  max-width: 78px;
+  max-height: 78px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.chat-message .message {
+  width: 80%;
+  padding: 0 1.5rem;
+  color: #fff;
+}
+</style>
+'''
 
+bot_template = '''
+<div class="chat-message bot">
+  <div class="avatar">
+    <img src="https://i.ibb.co/cN0nmSj/Screenshot-2023-05-28-at-02-37-21.png" style="max-height: 78px; max-width: 78px; border-radius: 50%; object-fit: cover;">
+  </div>
+  <div class="message">{{MSG}}</div>
+</div>
+'''
+
+user_template = '''
+<div class="chat-message user">
+  <div class="avatar">
+    <img src="https://i.ibb.co/rdZC7LZ/Photo-logo-1.png">
+  </div> 
+  <div class="message">{{MSG}}</div>
+</div>
+'''
+#--------------------------------------------------------------------------------
+#Pdf functions
+#--------------------------------------------------------------------------------
 def get_pdf_text(pdf_docs):
     text = ""
     for pdf in pdf_docs:
@@ -102,3 +154,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+#--------------------------------------------------------------------------------
