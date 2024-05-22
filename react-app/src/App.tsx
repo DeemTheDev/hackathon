@@ -4,6 +4,7 @@ import { Grid, GridItem } from "@chakra-ui/react";
 import Navbar from "./components/Navbar";
 import LandingAnimation from "./components/LandingAnimation";
 import Chatbot from "./components/Chatbot";
+import AnimatedText from "./components/AnimatedText";
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
         <GridItem area={"nav"}>
           <Navbar />
         </GridItem>
-        <GridItem area={"left"}>{/*Animated Text goes here ...*/}</GridItem>
+        <GridItem area={"left"}><AnimatedText/></GridItem>
         <GridItem area={"right"}>
           <LandingAnimation />
           <Chatbot />
