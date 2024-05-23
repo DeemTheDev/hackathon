@@ -8,10 +8,10 @@ from chatbot.nltk_utils import bag_of_words, tokenize
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-with open('chatbot/intents.json', 'r') as json_data:
+with open('chatbot/dataset/intents.json', 'r') as json_data:
     intents = json.load(json_data)
 
-FILE = "chatbot/data.pth"
+FILE = "chatbot/dataset/data.pth"
 data = torch.load(FILE)
 
 model_state = data["model_state"]
