@@ -12,7 +12,8 @@ function Chatbox() {
 
   const handleSend = () => {
     if (inputText.trim() !== '') {
-      setMessages([...messages, { name: 'User', message: inputText }]);
+      const updatedMessages = [...messages, { name: 'User', message: inputText }];
+    setMessages(updatedMessages);
       setInputText('');
 
       fetch('http://127.0.0.1:5000/predict', {
@@ -25,8 +26,8 @@ function Chatbox() {
       })
       .then(response => response.json())
       .then(data => {
-        console.log(data.answer);
-        setMessages([...messages, { name: 'Chatbot', message: data.answer }]);
+        const updatedMessagesWithResponse = [...updatedMessages, { name: 'Chatbot', message: data.answer }];
+      setMessages(updatedMessagesWithResponse);
       })
       .catch(error => {
         console.error('Error:', error);
@@ -42,10 +43,10 @@ function Chatbox() {
     const reversedMessages = messages.slice().reverse();
 
     const html = reversedMessages.map((item, index) => (
-      <div key={index} className={`messages__item ${item.name === "Sam" ? "messages__item--visitor" : "messages__item--operator"}`}>
+      <div key={index} className={`messages__item ${item.name === "User" ? "messages__item--visitor" : "messages__item--operator"}`}>
         {item.message}
       </div>
-    ));
+    )); 
 
     return html;
   };
@@ -65,7 +66,7 @@ function Chatbox() {
           <p className="chatbox__description--header">Hi. My name is Sam. How can I help you?</p>
         </div>
         <div className="chatbox__messages">
-          {updateChatText()}
+        {updateChatText()} 
         </div>
         <div className="chatbox__footer">
           <input type="text" value={inputText} onChange={handleInputChange} placeholder="Write a message..." />

@@ -53,6 +53,7 @@
     padding: 0 20px;
     color: black;
     background-color: white;
+    
   }
   
   .messages__item {
@@ -60,6 +61,8 @@
     background: #e0e0e0;
     padding: 8px 12px;
     max-width: 70%;
+   
+  
   }
   
   .messages__item--visitor,
@@ -67,6 +70,8 @@
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
+    align-self: flex-start;
+   
   }
   
   .messages__item--operator {
@@ -75,6 +80,10 @@
     border-bottom-left-radius: 20px;
     background: var(--primary);
     color: rgb(1, 1, 1);
+    background-color: blue;
+    align-self: flex-end;
+    
+    
   }
   
   /* FOOTER */
