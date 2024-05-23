@@ -1,11 +1,19 @@
 import { Grid, GridItem } from "@chakra-ui/react";
-
+import React, { useState, useEffect } from "react";
 //component imports:
 import Navbar from "./components/Navbar";
 import LandingAnimation from "./components/LandingAnimation";
 import Chatbot from "./components/Chatbot";
 
 function App() {
+  const [data, setData] = useState([{}]);
+
+  useEffect(() => {
+    fetch("/predict")
+     .then((res) => res.json())
+     .then((data) => {setData(data), console.log(data)});
+  }, []);
+
   return (
     <>
       <Grid
