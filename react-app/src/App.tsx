@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import LandingAnimation from "./components/LandingAnimation";
 import Chatbot from "./components/Chatbot";
 import AnimatedText from "./components/AnimatedText"; //Yash did this.
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -27,7 +28,7 @@ function App() {
           <Chatbot />
         </GridItem>
         <GridItem area={"footer"}>
-          {/*Footer goes here with github repo link, and developer names */}
+          <Footer />
         </GridItem>
       </Grid>
     </>
