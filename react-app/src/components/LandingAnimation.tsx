@@ -1,18 +1,18 @@
-import { Center, VStack, Divider, Flex } from "@chakra-ui/react";
+import { Box, VStack, Divider, Flex } from "@chakra-ui/react";
 //Lottie animation import
 import Lottie from "lottie-react";
 //animation import
-import animation from "../assets/main-animation.json";
+import animation from "../assets/animation2.json";
 
 const LandingAnimation = () => {
   return (
     <>
       <Flex>
-        <Divider orientation="vertical" h="400px" float="left" />
+        <Divider orientation="vertical" h="350px" float="left" ml="7rem" />
         <VStack>
-          <Center>
+          <Box w="55%">
             <Lottie animationData={animation} loop={true} />
-          </Center>
+          </Box>
         </VStack>
       </Flex>
     </>

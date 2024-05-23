@@ -1,10 +1,11 @@
-import { Grid, GridItem } from "@chakra-ui/react";
+import { Grid, GridItem, Flex } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
 //component imports:
 import Navbar from "./components/Navbar";
 import LandingAnimation from "./components/LandingAnimation";
 import Chatbot from "./components/Chatbot";
 import AnimatedText from "./components/AnimatedText";
+import BackendButtons from "./components/BackendButtons";
 
 function App() {
   const [data, setData] = useState([{}]);
@@ -21,8 +22,8 @@ function App() {
     <>
       <Grid
         templateAreas={{
-          base: `"nav" "left" "right" "footer"`, //Mobile view.
-          lg: `"nav nav" "left right" "footer footer"`, //Desktop view.
+          base: `"nav" "hero" "footer"`, //Mobile view.
+          lg: `"nav nav" "hero hero" "footer footer"`, //Desktop view.
         }}
         alignItems={"center"}
         gap={3}
@@ -32,17 +33,16 @@ function App() {
           <Navbar />
         </GridItem>
         {/*NAVBAR*/}
-        {/*ANIMATED TEXT AREA ...*/}
-        <GridItem bg="whitesmoke" area={"left"}>
-          <AnimatedText />
-        </GridItem>
-        {/*ANIMATED TEXT AREA ...*/}
-        {/*ANIMATION ...*/}
-        <GridItem area={"right"}>
-          <LandingAnimation />
+        {/*HERO SECTION ...*/}
+        <GridItem area={"hero"}>
+          <Flex>
+            <AnimatedText />
+            <LandingAnimation />
+          </Flex>
+          <BackendButtons />
           <Chatbot />
         </GridItem>
-        {/*ANIMATION ...*/}
+        {/*HERO SECTION*/}
         {/*FOOTER ...*/}
         <GridItem area={"footer"}>
           {/*Footer goes here with github repo link, and developer names */}

@@ -7,8 +7,8 @@ const Navbar = () => {
       justifyContent={"space-between"}
       alignItems={"center"}
     >
-      <Text fontSize={"20px"} fontWeight={"bold"}>
-        Dr. AI
+      <Text color="#8338ec" fontSize={"30px"} fontWeight={"bold"}>
+        Doctor AI
       </Text>
       <ColorMode />
     </HStack>
