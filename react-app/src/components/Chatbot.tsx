@@ -38,7 +38,11 @@ function Chatbox() {
   const handleInputChange = event => {
     setInputText(event.target.value);
   };
-
+  const handleKeyDown = event => {
+    if (event.key === 'Enter') {
+      handleSend();
+    }
+  };
   const updateChatText = () => {
     const reversedMessages = messages.slice().reverse();
 
@@ -63,13 +67,13 @@ function Chatbox() {
           </div>
         </div>
         <div className="chatbox__header--footer">
-          <p className="chatbox__description--header">Hi. My name is Sam. How can I help you?</p>
+          <p className="chatbox__description--header">My name is Sam. How can I help you?</p>
         </div>
         <div className="chatbox__messages">
         {updateChatText()} 
         </div>
         <div className="chatbox__footer">
-          <input type="text" value={inputText} onChange={handleInputChange} placeholder="Write a message..." />
+          <input type="text" value={inputText} onChange={handleInputChange} onKeyDown={handleKeyDown} placeholder="Write a message..." />
           <button className="chatbox__send--footer send__button" onClick={handleSend}>Send</button>
         </div>
       </div>

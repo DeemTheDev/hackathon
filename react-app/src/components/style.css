@@ -39,9 +39,17 @@
   .chatbox__header {
     position: sticky;
     top: 0;
-    background: black;
+    background: navy;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
+  }
+.chatbox__content--header{
+  font-size: 20px;
+  margin-left:10px;
+}
+  .chatbox__header--footer{
+    background-color: navy !important;
+    padding-left:20px!important;
   }
   
   /* MESSAGES */
@@ -70,7 +78,7 @@
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
-    align-self: flex-start;
+    align-self: flex-end;
    
   }
   
@@ -81,7 +89,7 @@
     background: var(--primary);
     color: rgb(1, 1, 1);
     background-color: blue;
-    align-self: flex-end;
+    align-self: flex-start;
     
     
   }
@@ -97,6 +105,7 @@
     box-shadow: var(--secondaryBoxShadow);
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
+    background-color: rgb(223, 215, 215);
 
   }
   
@@ -106,6 +115,7 @@
     padding: 10px 10px;
     border-radius: 30px;
     text-align: left;
+    background-color: navy;
   }
   
   .chatbox__send--footer {
@@ -116,33 +126,23 @@
   .chatbox__button button:focus,
   .chatbox__button button:visited {
     padding: 10px;
-    background: black;
+    background: transparent;
     border: none;
     outline: none;
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
     border-bottom-left-radius: 50px;
-    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+    
     cursor: pointer;
   }
   
-  img {
-    width: 40px;
-    height: 40px;
+.chatbox__button {
+    width: 90px;
+    height: 80px;
     border-radius: 50%;
-    margin-right: 10px;
+    
+    float:right;
   }
-
-  h4{
-    display: inline;
-  }
-
-  .chatbox__image--header{
-    display:inline-block;
-  }
-.chatbox__heading--header{
-    display:inline-block;
-}
 .chatbox__header{
     display: flex;
     flex-direction: row;
@@ -156,7 +156,7 @@
 }
   
 .chatbox__header--footer{
-    background-color: black;
+    background-color: navy;
     padding-left:7px;
     padding-right:3px;
     padding-bottom: 7px;;
