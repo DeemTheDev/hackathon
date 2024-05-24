@@ -1,4 +1,4 @@
-import { HStack, Text } from "@chakra-ui/react";
+import { Code, Divider, HStack, Text, Link, Button } from "@chakra-ui/react";
 import ColorMode from "./ColorMode";
 const Navbar = () => {
   return (
@@ -10,7 +10,19 @@ const Navbar = () => {
       <Text color="#8338ec" fontSize={"30px"} fontWeight={"bold"}>
         Doctor AI
       </Text>
-      <ColorMode />
+      <HStack>
+        <Link>
+          <Code colorScheme="purple" children="Treatment Plan" />
+        </Link>
+        <Link>
+          <Code colorScheme="blue" children="Disease Diagnosis" />
+        </Link>
+        <Divider orientation="vertical" h={5} />
+        <Button colorScheme="purple" size="md">
+          Sign Up
+        </Button>
+        <ColorMode />
+      </HStack>
     </HStack>
   );
 };
