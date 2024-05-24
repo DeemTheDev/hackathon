@@ -1,0 +1,31 @@
+.navbar-links{
+    margin-left: 58%;
+}
+
+.navbar-link {
+    font-size: 16px;
+    font-family: 'Segoe UI';
+    font-weight: lighter;
+    text-decoration: none; 
+}
+
+.navbar-link:hover {
+    color: grey;
+    text-decoration: none !important; /* Ensure no underline on hover */
+}
+
+
+.navbar-button{
+    width: 80px;
+    padding: 1%;
+    background: rgb(128, 128, 128);
+    color: inherit;
+    border: 0px;
+    border-radius: 20px;
+}
+.navbar-button:hover{
+    color: black;
+    background: white;
+    transform: scale(0.90);
+    border: 0;
+}
