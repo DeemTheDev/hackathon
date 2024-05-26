@@ -12,6 +12,10 @@ torchaudio = "*"
 google-generativeai = "*"
 ipython = "*"
 streamlit = "*"
+flask = "*"
+flask-login = "*"
+flask-cors = "*"
+flask-sqlalchemy = "*"
 
 [dev-packages]
 

@@ -1,9 +1,8 @@
 from flask import Flask, render_template, request, jsonify
 from chatbot.chat import get_Response
-from flask_cors import CORS
+from Backend.__init__ import create_app
 
-app = Flask(__name__, template_folder='chatbot/templates')
-CORS(app)
+app = create_app()
 
 @app.post('/predict')
 def predict():
@@ -11,8 +10,6 @@ def predict():
     response = get_Response(text)
     message = {'answer': response}
     return jsonify(message)
-
-
 
 if __name__ == '__main__':
     app.run(debug=True)
