@@ -18,7 +18,7 @@ def create_database(app):
 
 def create_app():
     app = Flask(__name__, template_folder='chatbot/templates')
-    CORS(app, resources={r"*": {"origins": "http://localhost:5173"}},  supports_credentials=True)
+    CORS(app)
     app.config['SECRET_KEY'] = 'dalziel'
 
     # Set up the database URI
@@ -35,23 +35,26 @@ def create_app():
         else:
             print("Flask app is NOT connected to the database.")
 
-        # Import blueprints and models within the function scope to avoid circular imports
-        from .auth import auth
-        from .models import User, Note
+    # Import blueprints and models within the function scope to avoid circular imports
+    from .auth import auth
+    
 
-        # Register blueprints
-        app.register_blueprint(auth, url_prefix='/sign-up')
+    # Register blueprints
+    app.register_blueprint(auth, url_prefix='/auth')
 
-        # Create the database if it doesn't exist
-        create_database(app)
+    from .models import User
+    
+    # Create the database if it doesn't exist
+    create_database(app)
+    
 
-        login_manager = LoginManager()
-        login_manager.login_view = 'auth.login'
-        login_manager.init_app(app)
+    login_manager = LoginManager()
+    login_manager.login_view = 'auth.login'
+    login_manager.init_app(app)
 
-        @login_manager.user_loader
-        def load_user(id):
-            return User.query.get(int(id))
+    @login_manager.user_loader
+    def load_user(id):
+        return User.query.get(int(id))
         
         
 

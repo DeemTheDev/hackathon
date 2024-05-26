@@ -12,15 +12,20 @@ export default function Signup() {
 
   const handleSignup = async () => {
     try {
-      const response = await axios.post('http://127.0.0.1:5000/sign-up', {
-         name: name,
-          email: email,
-           password: password
-          
+      const response = await fetch('http://127.0.0.1:5000/auth/sign-up', {
+        method: 'POST',
+        body: JSON.stringify({ name: name, email: email, password: password }),
+        mode: 'cors',
+        headers: {
+          'Content-Type': 'application/json'
+        }
       });
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
       console.log('Signup successful');
     } catch (error) {
-      console.error(error);
+      console.error('Error during signup:', error);
     }
   };
  
