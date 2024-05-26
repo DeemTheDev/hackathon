@@ -1,0 +1,29 @@
+body {
+    background-color: #121212;
+    color: #FFFFFF;
+}
+
+.stButton>button {
+    background-color: #333;
+    color: #FFFFFF;
+}
+
+.stTextInput>div>div>input {
+    background-color: #333;
+    color: #FFFFFF;
+}
+
+.stSelectbox>div>div>div {
+    background-color: #333;
+    color: #FFFFFF;
+}
+
+.stSlider>div>div>div>div {
+    background-color: #333;
+    color: #FFFFFF;
+}
+
+.stNumberInput>div>div>input {
+    background-color: #333;
+    color: #FFFFFF;
+}

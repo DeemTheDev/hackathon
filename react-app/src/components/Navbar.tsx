@@ -1,4 +1,5 @@
 import { Code, Divider, HStack, Text, Link, Button } from "@chakra-ui/react";
+
 import ColorMode from "./ColorMode";
 const Navbar = () => {
   return (
@@ -14,7 +15,7 @@ const Navbar = () => {
         <Link>
           <Code colorScheme="purple" children="Treatment Plan" />
         </Link>
-        <Link>
+        <Link href="http://localhost:8501">
           <Code colorScheme="blue" children="Disease Diagnosis" />
         </Link>
         <Divider orientation="vertical" h={5} />
