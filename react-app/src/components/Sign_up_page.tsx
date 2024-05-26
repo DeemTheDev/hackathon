@@ -1,8 +1,9 @@
-import { useState } from 'react';
+import React, { useState } from "react";
+import axios from "axios";
+import { Input, Button } from "@chakra-ui/react";
 import { Box, VStack, Heading, Text } from "@chakra-ui/layout";
 import { FormControl, FormLabel } from "@chakra-ui/form-control";
-import { Button, Input } from "@chakra-ui/react";
-import User from './User';
+
 
 export default function Signup() {
   const [email, setEmail] = useState('');
@@ -11,13 +12,18 @@ export default function Signup() {
 
   const handleSignup = async () => {
     try {
-      await User.create({ email, password, name });
+      const response = await axios.post('http://127.0.0.1:5000/sign-up', {
+         name: name,
+          email: email,
+           password: password
+          
+      });
       console.log('Signup successful');
     } catch (error) {
       console.error(error);
     }
   };
-
+ 
   return (
     <Box
       w={["full", "md"]}
@@ -44,6 +50,7 @@ export default function Signup() {
             onChange={(e) => setName(e.target.value)}
             backgroundColor="#e1bee7"
             color="#673ab7"
+            id= "name"
           />
         </FormControl>
         <FormControl>
@@ -56,6 +63,7 @@ export default function Signup() {
             onChange={(e) => setEmail(e.target.value)}
             backgroundColor="#e1bee7"
             color="#673ab7"
+            id="email"
           />
         </FormControl>
         <FormControl>
@@ -68,6 +76,7 @@ export default function Signup() {
             onChange={(e) => setPassword(e.target.value)}
             backgroundColor="#e1bee7"
             color="#673ab7"
+            id="password"
           />
         </FormControl>
         <Button
