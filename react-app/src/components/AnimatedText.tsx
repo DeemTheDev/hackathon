@@ -17,7 +17,7 @@ const AnimatedText = () => {
       <Heading as="h1" size="2xl">
         <ReactTyped
           strings={["Experience the Future of Diagnosis with Dr. AI"]}
-          typeSpeed={100}
+          typeSpeed={50}
         />
       </Heading>
       <br />

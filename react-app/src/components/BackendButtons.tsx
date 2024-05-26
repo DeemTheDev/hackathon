@@ -1,6 +1,7 @@
 import React, {
   Box,
   Flex,
+  Link,
   Button,
   ScaleFade,
   AbsoluteCenter,
@@ -25,7 +26,9 @@ const BackendButtons = () => {
               <AlertDialogContent>
                 <AlertDialogBody>
                   <Flex justifyContent="space-evenly" gap="1rem" p="1rem">
-                    <Button colorScheme="blue">Disease Diagnosis</Button>
+                    <Button colorScheme="blue">
+                      <Link href="http://localhost:8501">Take Diagnosis</Link>
+                    </Button>
                     <Button colorScheme="purple">Treatment Plan</Button>
                   </Flex>
                 </AlertDialogBody>
