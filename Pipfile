@@ -12,6 +12,9 @@ torchaudio = "*"
 google-generativeai = "*"
 ipython = "*"
 streamlit = "*"
+mysql-connector-python = "*"
+vertexai = "*"
+pypdf2 = "*"
 
 [dev-packages]
 
