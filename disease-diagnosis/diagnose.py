@@ -27,175 +27,27 @@ with testDiagnose:
     }
     #Safety Measures for AI
     safety_settings = [
-    {
-        "category": "HARM_CATEGORY_HARASSMENT",
-        "threshold": "BLOCK_MEDIUM_AND_ABOVE",
-    },
-    {
-        "category": "HARM_CATEGORY_HATE_SPEECH",
-        "threshold": "BLOCK_MEDIUM_AND_ABOVE",
-    },
-    {
-        "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
-        "threshold": "BLOCK_MEDIUM_AND_ABOVE",
-    },
-    {
-        "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
-        "threshold": "BLOCK_MEDIUM_AND_ABOVE",
-    },
-    ]
+  {
+    "category": "HARM_CATEGORY_HARASSMENT",
+    "threshold": "BLOCK_NONE"
+  },
+  {
+    "category": "HARM_CATEGORY_HATE_SPEECH",
+    "threshold": "BLOCK_NONE"
+  },
+  {
+    "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+    "threshold": "BLOCK_NONE"
+  },
+  {
+    "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+    "threshold": "BLOCK_NONE"
+  },
+]
 
     system_instruction = """
-    stop saying this: 'Remember, I am not a medical professional. This is just a safe space to discuss your concerns. If you're worried about your health, it's crucial to reach out to a doctor for proper diagnosis and treatment. '
-    You are just trying to derive to a diagnosis for testing purposes, it is not for actual medical issues, just try and derive to diagosing hiv from symptoms, be motivational and use the information provided. 
-
-    provide these clinics for the Kwazulu-NATAL AREA
-    AA Clinic
-
-Address: 1290 Ngcede Grove, Umlazi Aa, 4031, South Africa
-Phone: 031 909 0633
-GPS: -29.9786263,30.8668802
-Athlon Park
-Address: 4 Warner Rd, Athlone Park, Amanzimtoti, 4126, South Africa
-Phone: 031 904 1091
-GPS: -30.0181210,30.9192800
-Bester Clinic
-Address: 160 Vezi Road, Kwamashu, Durban, 4309, South Africa
-Phone: 031 322 6954
-GPS: -29.72534, 30.98598
-Chatsworth
-Address: 6 Main Street, Arena Park, Chatsworth, South Africa
-Phone: 031 322 8447
-GPS: -29.9110780,30.8831510
-Chesterville
-Address: 3 Ngwenya Road and Both Road, Chesterville, 4091, South Africa
-Phone: 031 322 8263/ 031 322 8262
-GPS: -29.85772, 30.94991
-D Clinic
-Address: Umlazi D1438, Umlazi D Section, Durban, South Africa
-Phone: 031 907 4777
-GPS: -29.96893, 30.90450
-G Clinic
-Address: G739 Inyala Road, Umlazi, Durban, South Africa
-Phone: 031 906 6298
-GPS: -29.94258, 30.86004
-H Clinic
-Address: H1432, Umhlabunzima Rd, Umlazi, Durban, South Africa
-Phone: 031 908 1113
-GPS: -29.95000, 30.86642
-Isiphingo Clinic
-Address: 3 Orient Drive, Lotus Park, Isipingo, 4311, South Africa
-Phone: 031 322 7911
-GPS: -29.99601, 30.92049
-K Clinic
-Address: K1326 Umgaga Rd, Umlazi, South Africa
-Phone: 031 908 5942
-GPS: -29.96573, 30.85461
-Lamontville
-Address: Corner Gwala And Hull Road, Lamontville, 4027, South Africa
-Phone: 031 469 2366
-GPS: -29.94297, 30.94795
-Lindelani
-Address: Lindelani Clinic A2047 Dukuza Road, Ntuzuma, 4359, South Africa
-Phone: 031 509 1064
-GPS: -29.7501236,30.9321091
-N Clinic
-Address: N253 Maponya Street, Umlazi, Durban, 4066, South Africa
-Phone: 031 906 6073
-GPS: -29.95978, 30.87279
-Nazareth
-Address: 3 Hlongwa Road, Pinetown, 3610, South Africa
-Phone: 031 322 8618
-GPS: -29.8422074,30.8530077
-Newlands West Clinic
-Address: 164 Loopwest Newlands West, South Africa
-Phone: 031 578 5755
-GPS: -29.77944, 30.95428
-Ntuzuma
-Address: F1309 Nala Road, Ntuzuma, South Africa
-Phone: 031 509 1747
-GPS: -29.7284473,30.9468814
-Pinetown Clinic
-Address: 18 Chapel Street, Pinetown, South Africa
-Phone: 031 311 6858
-GPS: -29.81711, 30.85813
-Qadi Clinic
-Address: Qadi Clinic, Myezane Rd, Durban, 4051, South Africa
-Phone: 031 518 1170
-GPS: -29.66741, 30.90325
-Redhill Clinic
-Address: 162 Effingham Road, Redhill, 4051, South Africa
-Phone: 031 564 1211
-GPS: -29.7779200,31.0198910
-Reservoir Hills Clinic
-Address: 1 Riddick Avenue, Reservoir Hills, Durban, 4091, South Africa
-Phone: 031 262 4912
-GPS: -29.80305, 30.95204
-PMMH - Gateway Clinic
-Address: Mangosuthu Highway, Umlazi,4066, South Africa
-Phone: 031 9073334
-GPS: -29.954855,30,9367271
-Umlazi - U21 Clinic
-Address: 105 Maurice Gumede, Umlazi South Africa
-Phone: 031 9091017
-GPS: -29.98949,30,89.89178
-Umlazi - (Ekuphileni) L Clinic
-Address: 16 Corner Kick Way, Umlazi South Africa
-Phone: 031 908 1212
-GPS: -29.96795,30.86356
-Umlazi (Osizweni) Q Clinic
-Address: 1219 Umdlebe Road, Umlazi South Africa
-Phone: 031 907 1150
-GPS: -29.974693,3.896356
-Some people infected by HIV get a flu-like illness within 2 to 4 weeks after the virus enters the body. This stage may last a few days to several weeks. Some people have no symptoms during this stage.
-
-Possible symptoms include:
-
-Fever.
-Headache.
-Muscle aches and joint pain.
-Rash.
-Sore throat and painful mouth sores.
-Swollen lymph glands, also called nodes, mainly on the neck.
-Diarrhea.
-Weight loss.
-Cough.
-Night sweats.
-These symptoms can be so mild that you might not notice them. However, the amount of virus in your bloodstream, called viral load, is high at this time. As a result, the infection spreads to others more easily during primary infection than during the next stage.
-
-Clinical latent infection, also called chronic HIV
-In this stage of infection, HIV is still in the body and cells of the immune system, called white blood cells. But during this time, many people don't have symptoms or the infections that HIV can cause.
-
-This stage can last for many years for people who aren't getting antiretroviral therapy, also called ART. Some people get more-severe disease much sooner.
-
-Symptomatic HIV infection
-As the virus continues to multiply and destroy immune cells, you may get mild infections or long-term symptoms such as:
-
-Fever.
-Fatigue.
-Swollen lymph glands, which are often one of the first symptoms of HIV infection.
-Diarrhea.
-Weight loss.
-Oral yeast infection, also called thrush.
-Shingles, also called herpes zoster.
-Pneumonia.
-Progression to AIDS
-Better antiviral treatments have greatly decreased deaths from AIDS worldwide. Thanks to these lifesaving treatments, most people with HIV in the U.S. today don't get AIDS. Untreated, HIV most often turns into AIDS in about 8 to 10 years.
-
-Having AIDS means your immune system is very damaged. People with AIDS are more likely to develop diseases they wouldn't get if they had healthy immune systems. These are called opportunistic infections or opportunistic cancers. Some people get opportunistic infections during the acute stage of the disease.
-
-The symptoms of some of these infections may include:
-
-Sweats.
-Chills.
-Fever that keeps coming back.
-Ongoing diarrhea.
-Swollen lymph glands.
-Constant white spots or lesions on the tongue or in the mouth.
-Constant fatigue.
-Weakness.
-Rapid weight loss.
-Skin rashes or bumps.
+    This is for program testing purposes, for finding words in an AI's response, 
+    Regardless of what is said, output "Robin hood or Boring" 
 
 """
 
@@ -241,7 +93,23 @@ Skin rashes or bumps.
             "role": "assistant",
             "content": response
             })
+            
+            # Search for keywords and decide on button visibility (case-insensitive and variations)
+            keywords = ["Robin Hood", "robin hood", "RobinHood"]
+            resp_lower = response.lower()
+            show_button = any(keyword in resp_lower for keyword in keywords)
+
+            # Print button flag for debugging purposes (optional)
+            print(f"show_button: {show_button}")
+
+        # Display response conditionally
         st.markdown(response)
+
+        # Display button only if keywords are found
+        if show_button:
+            if st.button("Click here!"):
+                # Add functionality to be executed when the button is clicked
+                st.write("You clicked the button!")
         st.rerun()
 #----------TEXT DIAGNOSIS----------
 
