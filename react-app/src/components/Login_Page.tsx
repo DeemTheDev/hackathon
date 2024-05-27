@@ -1,9 +1,9 @@
-import User from './User';
+
 import { useState } from 'react';
 import { Box, VStack, HStack, Heading, Text } from "@chakra-ui/layout";
 import { FormControl, FormLabel } from "@chakra-ui/form-control";
 import { Button, Input } from "@chakra-ui/react";
-import bcrypt from 'bcrypt';
+
 
 export default function Login() {
   const [email, setEmail] = useState('');
@@ -11,16 +11,20 @@ export default function Login() {
 
   const handleLogin = async () => {
     try {
-      const user = await User.findOne({ where: { email } });
-      if (user && (await bcrypt.compare(password, user.password))) {//this one line idk I have tried everything I know
-        // Login successful
-        console.log('Login successful');
-      } else {
-        // Login failed
-        console.log('Login failed');
+      const response = await fetch('http://127.0.0.1:5000/auth/login', {
+        method: 'POST',
+        body: JSON.stringify({email: email, password: password }),
+        mode: 'cors',
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
       }
+      console.log('Login successful');
     } catch (error) {
-      console.error(error);
+      console.error('Error during Login:', error);
     }
   };
 

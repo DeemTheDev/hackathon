@@ -30,7 +30,7 @@ def sign_up():
         name = data.get('name')
         email = data.get('email')
         password = data.get('password')
-        print("sucess")
+
 
         # password2 = request.form.get('password2')
 
@@ -55,6 +55,27 @@ def sign_up():
         # login_user(user, remember=True)
         flash('Account Created!', category='success')
         return jsonify({'message': 'Account Created!', 'user_id': new_user.id}), 201
+
+@auth.post('/login')
+def login():
+    
+    if request.method == 'POST':
+        data = request.get_json()
+        email = data.get('email')
+        password = data.get('password')
+
+        user = User.query.filter_by(email=email).first()
+        if user:
+            if check_password_hash(user.password, password):
+                flash('Logged in successfully!')
+                login_user(user, remember=True) # remembers user is logined
+                return jsonify({'message': 'Logged in successfully!'}), 200
+                # return redirect(url_for('views.home'))
+            else:
+                flash('Password incorrect, try again.', category='error')
+        else:
+            flash('Email does no exist, please try again.', category='error')
+        return jsonify({'message': 'Authentication failed'}), 401
             
       
    

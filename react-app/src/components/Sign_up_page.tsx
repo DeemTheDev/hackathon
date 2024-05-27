@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import axios from "axios";
 import { Input, Button } from "@chakra-ui/react";
 import { Box, VStack, Heading, Text } from "@chakra-ui/layout";
 import { FormControl, FormLabel } from "@chakra-ui/form-control";
