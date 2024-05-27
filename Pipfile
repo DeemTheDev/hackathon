@@ -15,6 +15,7 @@ streamlit = "*"
 mysql-connector-python = "*"
 vertexai = "*"
 pypdf2 = "*"
+python-dotenv = "*"
 
 [dev-packages]
 

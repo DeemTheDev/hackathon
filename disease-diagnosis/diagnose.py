@@ -1,10 +1,11 @@
+#GOOGLE IMPORTS FOR IMAGES AND TEXT
 import io
 import textwrap
 import PIL.Image
 import streamlit as st
 import google.generativeai as genai
 from IPython.display import Markdown
-
+#LANGCHAIN IMPORTS FOR PDF
 
 #Diagnosis Tabs:
 testDiagnose, imagesDiagnose, pdfDaiagnose = st.tabs(["Diagnose Text", "Diagnose Image", "Diagnose PDF"])
