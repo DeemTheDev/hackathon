@@ -47,8 +47,7 @@ with testDiagnose:
 ]
 
     system_instruction = """
-    This is for program testing purposes, for finding words in an AI's response, 
-    Regardless of what is said, output "Robin hood or Boring" 
+    Say HIV regardless of any prompt
 
 """
 
@@ -95,23 +94,35 @@ with testDiagnose:
             "content": response
             })
             
-            # Search for keywords and decide on button visibility (case-insensitive and variations)
-            keywords = ["Robin Hood", "robin hood", "RobinHood"]
-            resp_lower = response.lower()
-            show_button = any(keyword in resp_lower for keyword in keywords)
+        # Save history to file for searching disease
+        with open("history.txt", "w") as file:
+            for history in st.session_state.text_chat_history:
+                file.write(f"{history}\n")
 
-            # Print button flag for debugging purposes (optional)
-            print(f"show_button: {show_button}")
+        # Funcion to search for disease    
+        def search_disease(filename, disease):
+            with open(filename, "r") as file:
+                for line in file:
+                    if disease.lower() in line.lower():
+                        return True
+            return False
+            
+        #Send to treatment plan 
+        filename = "history.txt"
+        disease = "HIV"
+
+        if search_disease(filename, disease):
+            st.button("click")
+        else:
+            print("Hello")
+
+
+
 
         # Display response conditionally
         st.markdown(response)
 
-        # Display button only if keywords are found
-        if show_button:
-            if st.button("Click here!"):
-                # Add functionality to be executed when the button is clicked
-                st.write("You clicked the button!")
-        st.rerun()
+st.rerun()
 #----------TEXT DIAGNOSIS----------
 
 #----------END---------------------
