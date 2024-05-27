@@ -6,10 +6,15 @@ import subprocess
 #RUN THE BACKEND FILES WITH THIS CODE:
 
 #THIS FUNCTION AUTOMATICALLY RUNS ALL THE BACKEND PYTHON FILES. 
-def run_backend():
-    #Run disease diagnosis FILE:
-    st_diseaseDiagnosis = subprocess.Popen(['streamlit', 'run', 'diagnosis.py', '--server.port', '8501', '--server.headless', 'true'], cwd='disease-diagnosis/')
-    st_diseaseDiagnosis.wait()
+# def run_react():
+#     #Run react app:
+#     st_react = subprocess.Popen(['npm', 'run', 'dev'], cwd='react-app/')
+#     st_react.wait()
+
+# def run_diseaseDiagnosis():
+#     #Run disease diagnosis FILE:
+#     st_diseaseDiagnosis = subprocess.Popen(['streamlit', 'run', 'diagnose.py', '--server.port', '8501', '--server.headless', 'true'], cwd='disease-diagnosis/')
+#     st_diseaseDiagnosis.wait()
 
 app = Flask(__name__, template_folder='chatbot/templates')
 CORS(app)
@@ -24,6 +29,5 @@ def predict():
 
 
 if __name__ == '__main__':
-    
     app.run(debug=True)
-    run_backend()
+    
