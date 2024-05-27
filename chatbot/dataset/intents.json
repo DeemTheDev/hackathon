@@ -1,84 +1,102 @@
 {
-    "intents": [
+  "intents": [
       {
-        "tag": "greeting",
-        "patterns": [
-          "Hi",
-          "Hey",
-          "How are you",
-          "Is anyone there?",
-          "Hello",
-          "Good day"
-        ],
-        "responses": [
-          "Hey :-)",
-          "Hello, thanks for visiting",
-          "Hi there, what can I do for you?",
-          "Hi there, how can I help?"
-        ]
+          "tag": "greeting",
+          "patterns": [
+              "Hi",
+              "Hey",
+              "Hello",
+              "Good morning",
+              "Good afternoon",
+              "Greetings",
+              "Howzit",
+              "Hello Dr"
+          ],
+          "responses": [
+              "Welcome to Dr Ai! How can I assist you today?",
+              "Hello, Its Dr AI! How can I help?",
+              "Hi there! Would you like to tell me your symptoms?"
+          ]
       },
       {
-        "tag": "goodbye",
-        "patterns": ["Bye", "See you later", "Goodbye"],
-        "responses": [
-          "See you later, thanks for visiting",
-          "Have a nice day",
-          "Bye! Come back again soon."
-        ]
+          "tag": "goodbye",
+          "patterns": [
+              "Bye",
+              "Goodbye",
+              "Cheers"
+          ],
+          "responses": [
+              "Goodbye! Take care.",
+              "Bye! Have a great day.",
+              "See you later! Feel free to return anytime."
+          ]
       },
       {
-        "tag": "thanks",
-        "patterns": ["Thanks", "Thank you", "That's helpful", "Thank's a lot!"],
-        "responses": ["Happy to help!", "Any time!", "My pleasure"]
+          "tag": "thanks",
+          "patterns": [
+              "Thanks",
+              "Thank you",
+              "Appreciate it",
+              "Thanks a lot",
+              "Thank you very much",
+              "Much obliged"
+          ],
+          "responses": [
+              "You're welcome, I Hope You Feel Better",
+              "Glad I could help, Get Well soon.",
+              "No Problem, Get Well Soon."
+          ]
       },
       {
-        "tag": "items",
-        "patterns": [
-          "Which items do you have?",
-          "What kinds of items are there?",
-          "What do you sell?"
-        ],
-        "responses": [
-          "We sell coffee and tea",
-          "We have coffee and tea"
-        ]
+          "tag": "flu",
+          "patterns": [
+              "I have a fever",
+              "I have chills",
+              "I have a sore throat",
+              "I feel weak",
+              "I have muscle pain",
+              "I'm experiencing fatigue",
+              "My nose is congested",
+              "I have a runny nose",
+              "I have nausea",
+              "I have vomiting"
+          ],
+          "responses": [
+              "It sounds like you may have the flu. The flu is a contagious respiratory illness caused by influenza viruses. Rest, drink fluids, and consider seeing a healthcare provider for further evaluation and treatment if necessary."
+          ]
       },
       {
-        "tag": "payments",
-        "patterns": [
-          "Do you take credit cards?",
-          "Do you accept Mastercard?",
-          "Can I pay with Paypal?",
-          "Are you cash only?"
-        ],
-        "responses": [
-          "We accept VISA, Mastercard and Paypal",
-          "We accept most major credit cards, and Paypal"
-        ]
+          "tag": "tuberculosis",
+          "patterns": [
+              "I have a persistent cough",
+              "I have chest pain",
+              "I cough up blood",
+              "I have night sweats",
+              "I have weight loss",
+              "I have loss of appetite",
+              "I feel fatigued",
+              "I have difficulty breathing"
+          ],
+          "responses": [
+              "Your symptoms could indicate tuberculosis (TB). TB is a bacterial infection that primarily affects the lungs. It's important to seek medical attention promptly for diagnosis and treatment, as TB can be serious if left untreated."
+          ]
       },
       {
-        "tag": "delivery",
-        "patterns": [
-          "How long does delivery take?",
-          "How long does shipping take?",
-          "When do I get my delivery?"
-        ],
-        "responses": [
-          "Delivery takes 2-4 days",
-          "Shipping takes 2-4 days"
-        ]
-      },
-      {
-        "tag": "funny",
-        "patterns": [
-          "Tell me a joke!",
-          "Tell me something funny!",
-          "Do you know a joke?"
-        ],
-        "responses": [
-          "Why did the hipster burn his mouth? He drank the coffee before it was cool.",
-          "What did the buffalo say when his son left for college? Bison."
-        ]
+          "tag": "stroke",
+          "patterns": [
+              "My face droops on one side",
+              "I have weakness or numbness in one arm",
+              "I have difficulty speaking",
+              "I have a severe headache",
+              "I have trouble walking",
+              "I feel dizzy",
+              "I have vision problems",
+              "I have confusion",
+              "I have loss of coordination"
+          ],
+          "responses": [
+              "Your symptoms could indicate a stroke, which requires immediate medical attention. Call emergency services or go to the nearest hospital as soon as possible. Remember, 'FAST': Face drooping, Arm weakness, Speech difficulty, Time to call emergency services."
+          ]
       }
-    ]
+  ]
 }
