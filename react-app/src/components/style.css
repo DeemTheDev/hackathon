@@ -37,10 +37,10 @@
   /* border: 2px solid black !important; */
   outline: none;
   cursor: pointer;
-  color: black !important;
   border-radius: 15px;
   margin-left:15px;
   padding: 5px;
+
 }
 
 .send__button:hover{
@@ -53,7 +53,6 @@
   position: sticky;
   top: 0;
   background-color: #8338ec;
- 
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   font-size: 25px;
@@ -170,7 +169,7 @@ input:focus{
 }
 
 .chatbox__send--footer {
-  color: purple;
+  color: rgb(18, 1, 26);
 }
 
 .chatbox__button button,
@@ -204,7 +203,7 @@ input:focus{
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   box-shadow: var(--primaryBoxShadow);
-  color:black;
+  color:rgb(33, 4, 48);
 }
 
 .chatbox__header--footer{
@@ -212,7 +211,8 @@ input:focus{
   padding-left:60px;
   padding-right:3px;
   padding-bottom: 7px;
-  color:black;
+  color: rgb(33, 4, 48);
+  ;
 }
 
 

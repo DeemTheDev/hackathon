@@ -78,12 +78,13 @@ export default function Login({setIsLoggedIn, setIsLoginOpen}: LoginProps) {
       borderColor={["", "gray.300"]}
       borderRadius={10}
       backgroundColor="#673ab7"
+      position={'relative'}
     >
       <CloseButton
         position="absolute"
-        top={155}
-        right={180}
-    
+        top={25}
+        right={25}
+        onClick={() => setIsLoginOpen(false)}
         colorScheme="red"
         // Call onClose function when close button is clicked
       />
@@ -109,8 +110,11 @@ export default function Login({setIsLoggedIn, setIsLoginOpen}: LoginProps) {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             backgroundColor="#e1bee7"
-            color="#white"
+            color="black"
             borderRadius={20}
+            _focus={{
+              color: "white"
+            }}
           />
         </FormControl>
         <FormControl>
@@ -122,9 +126,12 @@ export default function Login({setIsLoggedIn, setIsLoginOpen}: LoginProps) {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             backgroundColor="#e1bee7"
-            color="#white"
+            color="black"
             borderRadius={20}
             onKeyDown={handleKeyDown}
+            _focus={{
+              color: "white"
+            }}
    
           />
         </FormControl>

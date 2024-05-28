@@ -4,8 +4,11 @@ import { Box, VStack, Heading, Text } from "@chakra-ui/layout";
 import { FormControl, FormLabel } from "@chakra-ui/form-control";
 import { useNavigate } from "react-router-dom";
 
+interface SignUpProps {
+  setIsSignUpOpen:React.Dispatch<React.SetStateAction<boolean>>;
+}
 
-export default function Signup() {
+export default function Signup({setIsSignUpOpen}: SignUpProps) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [name, setName] = useState('');
@@ -69,14 +72,14 @@ export default function Signup() {
       borderColor={["", "gray.300"]}
       borderRadius={10}
       backgroundColor="#673ab7"
+      position='relative'
     >
       <CloseButton
         position="absolute"
-        top={155}
-        right={180}
-    
+        top={25}
+        right={25}
         colorScheme="red"
-        onClick={() => onClose(false)} // Call onClose function when close button is clicked
+        onClick={() => setIsSignUpOpen(false)} 
       />
 
       <VStack spacing={4} align="flex-start" w="full">
@@ -99,9 +102,12 @@ export default function Signup() {
             value={name}
             onChange={(e) => setName(e.target.value)}
             backgroundColor="#e1bee7"
-            color="white"
+            color="black"
             id= "name"
             borderRadius={20}
+            _focus={{
+              color: "white"
+            }}
           />
         </FormControl>
         <FormControl>
@@ -113,9 +119,12 @@ export default function Signup() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             backgroundColor="#e1bee7"
-            color="white"
+            color="black"
             id="email"
             borderRadius={20}
+            _focus={{
+              color: "white"
+            }}
           />
         </FormControl>
         <FormControl>
@@ -127,9 +136,12 @@ export default function Signup() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             backgroundColor="#e1bee7"
-            color="white"
+            color="black"
             id="password"
             borderRadius={20}
+            _focus={{
+              color: "white"
+            }}
           />
         </FormControl>
         <Button

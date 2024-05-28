@@ -21,11 +21,11 @@ const BackendButtons = ({isLoggedIn}: BackendButtonsProps) => {
   return (
     <Box position="sticky">
       <AbsoluteCenter>
-        {isLoggedIn &&
+        {isLoggedIn }
         <Button onClick={onToggle} size="lg" colorScheme="teal" mt="5.5rem">
           Get Started
         </Button>
-        }
+        
         <ScaleFade initialScale={0.9} in={isOpen}>
           <AlertDialog isOpen={isOpen} onClose={onClose}>
             <AlertDialogOverlay>

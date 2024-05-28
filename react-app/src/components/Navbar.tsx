@@ -5,14 +5,13 @@ import Sign_up_page from './Sign_up_page'; // Import the Sign_up_page component
 import Login_Page from './Login_Page';
 import ColorMode from "./ColorMode";
 import Login from './Login_Page'; // Import the Login component
-import BackendButtons from "./BackendButtons";
+
 
 interface NavbarProps {
   setIsLoggedIn: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-function Navbar() {
-  
+const Navbar: React.FC<NavbarProps> = ({ setIsLoggedIn: ParentIsLoggedIn }) => {
   const [isSignUpOpen, setIsSignUpOpen] = useState(false); // State variable to track sign-up block visibility
   const [isLoginOpen, setIsLoginOpen] = useState(false); // State variable to track login block visibility
   const [isLoggedIn, setIsLoggedIn] = useState(false); // State variable to track user login status
@@ -27,9 +26,9 @@ function Navbar() {
     setIsLoginOpen(!isLoginOpen);
   };
 
-
   const handleLogout = () => {
     setIsLoggedIn(false); 
+    ParentIsLoggedIn(isLoggedIn);
   };
 
   return (
@@ -50,7 +49,16 @@ function Navbar() {
           <Divider orientation="vertical" h={5} />
           </div>
           }
-          <Button as={RouterLink} to="/sign-up" colorScheme="purple" size="md" onClick={toggleSignUpBlock}>
+          <Button as={RouterLink} 
+          to="/sign-up" 
+          colorScheme="purple" 
+          size="md" 
+          onClick={ () => {
+            if (isLoginOpen){
+              toggleLoginBlock();
+            }
+            toggleSignUpBlock()
+          }}>
             {isSignUpOpen ? 'Close Sign Up' : 'Sign Up'}
           </Button>
 
@@ -59,7 +67,15 @@ function Navbar() {
               Logout
             </Button>
           ) : (
-            <Button as={RouterLink} to="/login" colorScheme="purple" size="md" onClick={toggleLoginBlock}>
+            <Button as={RouterLink} to="/login" 
+            colorScheme="purple" 
+            size="md"
+            onClick={ () => {
+              if (isSignUpOpen){
+                toggleSignUpBlock();
+              }
+              toggleLoginBlock()
+            }}>
               {isLoginOpen ? 'Close Login' : 'Login'}
             </Button>
           )}
@@ -67,7 +83,7 @@ function Navbar() {
       </HStack>
       <Routes>
         {isSignUpOpen && ( // Render sign-up page only if isSignUpOpen is true
-          <Route path="/sign-up" element={<Sign_up_page />} />
+          <Route path="/sign-up" element={<Sign_up_page setIsSignUpOpen={setIsSignUpOpen} />} />
         )}
         {isLoginOpen && ( // Render login page only if isLoginOpen is true
           <Route path="/login" element={<Login_Page setIsLoggedIn={setIsLoggedIn} setIsLoginOpen={setIsLoginOpen} />} />
