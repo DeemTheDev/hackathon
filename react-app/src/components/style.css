@@ -3,6 +3,7 @@
   position: absolute;
   top: 250px;
   right: 50px;
+  background-color: none;
  
   
 }
@@ -13,11 +14,11 @@
   background: #eee;
   width: 300px;
   height: 350px;
-  z-index: -123456;
+  z-index:1;
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
   border-radius: 30px;
-  background-color: rgb(236, 209, 241);
+  background-color:#d6bcfa;
 }
 
 .chatbox--active .chatbox__support {
@@ -70,8 +71,8 @@
   overflow-y: scroll;
   flex-direction: column-reverse;
   padding: 0 20px;
-  color: black;
-  background-color:rgb(236, 209, 241);
+  color: rgb(244, 240, 240);;
+  background-color:#d6bcfa;
   
 }
 
@@ -81,7 +82,7 @@
 
 .messages__item {
   margin-top: 10px;
-  background: #81e6d9;
+  background:rgb(44, 9, 245);
   padding: 8px 12px;
   max-width: 70%;
  
@@ -104,12 +105,35 @@
   border-top-right-radius: 20px;
   border-bottom-left-radius: 20px;
   background: var(--primary);
-  color: rgb(244, 240, 240);
-  background-color: rgb(44, 9, 245);
+  color  :black;
+  background-color: #81e6d9 ;
   align-self: flex-start;
   
   
 }
+.typing-bubble {
+  display: flex;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  margin: 5px;
+
+  background-color: #007bff; /* Blue color, you can adjust as needed */
+  animation: typing-animation 0.25s infinite alternate; /* Adjust animation duration as needed */
+}
+
+@keyframes typing-animation {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(1.5);
+    opacity: 0.9;
+  }
+}
+
+
 
 /* FOOTER */
 .chatbox__footer {
@@ -128,16 +152,25 @@
 
 .chatbox__footer input {
   width: 80%;
-  border: none;
   padding: 10px 10px;
   border-radius: 30px;
   text-align: left;
-  border: 1px solid purple;
+  border: 2px solid purple;
+  background-color: #d6bcfa;
 }
 
+input::placeholder{
+  color: rgb(170, 127, 187);
+}
+
+input:focus{
+  border: 1px solid  #d6bcfa;
+  color:black;
+  outline: none;
+}
 
 .chatbox__send--footer {
-  color: rgb(6, 5, 5);
+  color: purple;
 }
 
 .chatbox__button button,
@@ -182,10 +215,6 @@
   color:black;
 }
 
-input{
-background-color: rgb(208, 175, 214);
-border: 1px solid purple;
-}
 
 img{
 height:35px;

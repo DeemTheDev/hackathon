@@ -5,6 +5,8 @@ function Chatbox() {
   const [isOpen, setIsOpen] = useState(false);
   const [inputText, setInputText] = useState('');
   const [messages, setMessages] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+
 
   const toggleChatbox = () => {
     setIsOpen(!isOpen);
@@ -13,27 +15,32 @@ function Chatbox() {
   const handleSend = () => {
     if (inputText.trim() !== '') {
       const updatedMessages = [...messages, { name: 'User', message: inputText }];
-    setMessages(updatedMessages);
+      setMessages(updatedMessages);
       setInputText('');
-
-      fetch('http://127.0.0.1:5000/predict', {
-        method: 'POST',
-        body: JSON.stringify({ message: inputText }),
-        mode: 'cors',
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      })
-      .then(response => response.json())
-      .then(data => {
-        const updatedMessagesWithResponse = [...updatedMessages, { name: 'Chatbot', message: data.answer }];
-      setMessages(updatedMessagesWithResponse);
-      })
-      .catch(error => {
-        console.error('Error:', error);
-      });
+      setIsLoading(true); // Set isLoading to true before sending request
+  
+      setTimeout(() => {
+        fetch('http://127.0.0.1:5000/predict', {
+          method: 'POST',
+          body: JSON.stringify({ message: inputText }),
+          mode: 'cors',
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        })
+        .then(response => response.json())
+        .then(data => {
+          const updatedMessagesWithResponse = [...updatedMessages, { name: 'Chatbot', message: data.answer }];
+          setMessages(updatedMessagesWithResponse);
+          setIsLoading(false); // Set isLoading to false after receiving response
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+      }, 1500); // Delay response by 3 seconds
     }
   };
+  
 
   const handleInputChange = event => {
     setInputText(event.target.value);
@@ -76,12 +83,21 @@ function Chatbox() {
         </div>
 
         <div className="chatbox__messages">
+        
         {updateChatText()} 
+        
+        </div>
+        
+        <div style={{ display: 'flex', marginLeft: '10px', margin: '3px' }}>
+        {isLoading && <div className="typing-bubble"></div>}
+        {isLoading && <div className="typing-bubble"></div>}
+        {isLoading && <div className="typing-bubble"></div>}
         </div>
 
         <div className="chatbox__footer">
           <input type="text" value={inputText} onChange={handleInputChange} onKeyDown={handleKeyDown} placeholder="Write a message..." />
           <button className="chatbox__send--footer send__button" onClick={handleSend}>Send</button>
+          
         </div>
       </div>
 

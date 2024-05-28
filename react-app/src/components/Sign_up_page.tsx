@@ -52,6 +52,12 @@ export default function Signup() {
       console.error('Error during signup:', error);
     }
   };
+
+  const handleKeyDown= event => {
+    if (event.key === 'Enter') {
+      handleSignup();
+    }
+  };
  
   return (
     <Box
@@ -134,6 +140,7 @@ export default function Signup() {
           color="black"
           onClick={handleSignup}
           borderRadius={20}
+          onKeyDown={handleKeyDown}
         >
           Sign Up
         </Button>

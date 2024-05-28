@@ -2,17 +2,22 @@
 import { useState, useEffect } from 'react';
 import { Box, VStack, HStack, Heading, Text } from "@chakra-ui/layout";
 import { FormControl, FormLabel } from "@chakra-ui/form-control";
-import { Button, Input, Alert, AlertIcon } from "@chakra-ui/react";
+import { Button, Input, Alert, AlertIcon, CloseButton } from "@chakra-ui/react";
 import { useNavigate } from 'react-router-dom';
 
 
-export default function Login() {
+interface LoginProps {
+  setIsLoggedIn: React.Dispatch<React.SetStateAction<boolean>>;
+  setIsLoginOpen:React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export default function Login({setIsLoggedIn, setIsLoginOpen}: LoginProps) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate(); // Initialize useHistory hook
   const [message, setMessage] = useState('');
   const [error, setError] = useState(false);
- 
+
 
   useEffect(() => {
     // Clear message after 5 seconds
@@ -39,6 +44,8 @@ export default function Login() {
       if (response.ok) {
         setMessage(data.message);
         setError(false);
+        setIsLoggedIn(true); // Set isLoggedIn to true upon successful login
+        setIsLoginOpen(false);
       } else {
         setMessage(data.message);
         setError(true);
@@ -51,6 +58,11 @@ export default function Login() {
       navigate('/'); // Navigate to home page upon successful login
     } catch (error) {
       console.error('Error during Login:', error);
+    } 
+  };
+  const handleKeyDown = event => {
+    if (event.key === 'Enter') {
+      handleLogin();
     }
   };
 
@@ -67,6 +79,14 @@ export default function Login() {
       borderRadius={10}
       backgroundColor="#673ab7"
     >
+      <CloseButton
+        position="absolute"
+        top={155}
+        right={180}
+    
+        colorScheme="red"
+        // Call onClose function when close button is clicked
+      />
       <VStack spacing={4} align="flex-start" w="full">
         <VStack spacing={4} align="flex-start" w="full">
           <Heading color="white">Login</Heading>
@@ -104,6 +124,8 @@ export default function Login() {
             backgroundColor="#e1bee7"
             color="#white"
             borderRadius={20}
+            onKeyDown={handleKeyDown}
+   
           />
         </FormControl>
         <HStack w="full" justify="space-between">
@@ -119,6 +141,7 @@ export default function Login() {
           color="#673ab7"
           onClick={handleLogin}
           borderRadius={20}
+          
         >
           Login
         </Button>

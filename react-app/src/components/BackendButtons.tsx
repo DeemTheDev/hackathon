@@ -11,14 +11,21 @@ import React, {
   AlertDialogContent,
   AlertDialogOverlay,
 } from "@chakra-ui/react";
-const BackendButtons = () => {
-  const { isOpen, onOpen, onToggle, onClose } = useDisclosure();
+
+
+interface BackendButtonsProps {
+  isLoggedIn: boolean;
+}
+const BackendButtons = ({isLoggedIn}: BackendButtonsProps) => {
+  const { isOpen, onToggle, onClose } = useDisclosure();
   return (
     <Box position="sticky">
       <AbsoluteCenter>
+        {isLoggedIn &&
         <Button onClick={onToggle} size="lg" colorScheme="teal" mt="5.5rem">
           Get Started
         </Button>
+        }
         <ScaleFade initialScale={0.9} in={isOpen}>
           <AlertDialog isOpen={isOpen} onClose={onClose}>
             <AlertDialogOverlay>

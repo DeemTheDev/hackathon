@@ -9,6 +9,7 @@ import BackendButtons from "./components/BackendButtons";
 
 function App() {
   const [data, setData] = useState([{}]);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
     fetch("/predict")
@@ -30,7 +31,7 @@ function App() {
       >
         {/*NAVBAR*/}
         <GridItem area={"nav"}>
-          <Navbar />
+          <Navbar setIsLoggedIn={setIsLoggedIn}/>
         </GridItem>
         {/*NAVBAR*/}
         {/*HERO SECTION ...*/}
@@ -39,7 +40,7 @@ function App() {
             <AnimatedText />
             <LandingAnimation />
           </Flex>
-          <BackendButtons />
+          <BackendButtons isLoggedIn={isLoggedIn} />
           <Chatbot />
         </GridItem>
         {/*HERO SECTION*/}
