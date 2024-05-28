@@ -58,30 +58,39 @@ function Chatbox() {
   return (
     <div className={`chatbox ${isOpen ? 'chatbox--active' : ''}`}>
       <div className="chatbox__support">
+        
         <div className="chatbox__header">
+
           <div className="chatbox__image--header">
-            <img src="https://img.icons8.com/color/48/000000/circled-user-female-skin-type-5--v1.png" alt="image" />
+            <img src="https://th.bing.com/th/id/R.8e2c571ff125b3531705198a15d3103c?rik=muXZvm3dsoQqwg&riu=http%3a%2f%2fpluspng.com%2fimg-png%2fpng-user-icon-person-icon-png-people-person-user-icon-2240.png&ehk=MfHYkGonqy7I%2fGTKUAzUFpbYm9DhfXA9Q70oeFxWmH8%3d&risl=&pid=ImgRaw&r=0" alt="image" />
           </div>
+
           <div className="chatbox__content--header">
             <h4 className="chatbox__heading--header">Chat support</h4>
           </div>
+
         </div>
+
         <div className="chatbox__header--footer">
-          <p className="chatbox__description--header">My name is Sam. How can I help you?</p>
+          <p className="chatbox__description--header">Hi. How can I help you?</p>
         </div>
+
         <div className="chatbox__messages">
         {updateChatText()} 
         </div>
+
         <div className="chatbox__footer">
           <input type="text" value={inputText} onChange={handleInputChange} onKeyDown={handleKeyDown} placeholder="Write a message..." />
           <button className="chatbox__send--footer send__button" onClick={handleSend}>Send</button>
         </div>
       </div>
+
       <div className="chatbox__button">
         <button onClick={toggleChatbox}>
-          <img src="https://th.bing.com/th/id/R.7ed88e34422ab9fa2554f689c642870a?rik=6QlbwuWmzWT79A&riu=http%3a%2f%2fwww.freepngimg.com%2fdownload%2fchat%2f1-2-chat-png-image.png&ehk=WJg1aiuswHh5jpW%2fuE9ipZJfd4CWVlQ6kYyWtRbC29M%3d&risl=&pid=ImgRaw&r=0-icon.svg" alt="Chatbox Icon" />
+          <img className="chatbox_icon" src="https://th.bing.com/th/id/R.a5b49ccb833a953658c7ef94596f3287?rik=0XVN2ybEkq66ng&pid=ImgRaw&r=0&sres=1&sresct=1" alt="Chatbox Icon" />
         </button>
       </div>
+
     </div>
   );
 }

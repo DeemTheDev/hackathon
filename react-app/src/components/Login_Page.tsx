@@ -1,13 +1,28 @@
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Box, VStack, HStack, Heading, Text } from "@chakra-ui/layout";
 import { FormControl, FormLabel } from "@chakra-ui/form-control";
-import { Button, Input } from "@chakra-ui/react";
+import { Button, Input, Alert, AlertIcon } from "@chakra-ui/react";
+import { useNavigate } from 'react-router-dom';
 
 
 export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate(); // Initialize useHistory hook
+  const [message, setMessage] = useState('');
+  const [error, setError] = useState(false);
+ 
+
+  useEffect(() => {
+    // Clear message after 5 seconds
+    const timer = setTimeout(() => {
+      setMessage('');
+      setError(false);
+    }, 2000);
+
+    return () => clearTimeout(timer); // Clear timeout on component unmount
+  }, [message]);
 
   const handleLogin = async () => {
     try {
@@ -19,14 +34,27 @@ export default function Login() {
           'Content-Type': 'application/json'
         }
       });
+
+      const data = await response.json();
+      if (response.ok) {
+        setMessage(data.message);
+        setError(false);
+      } else {
+        setMessage(data.message);
+        setError(true);
+      }
+
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
       console.log('Login successful');
+      navigate('/'); // Navigate to home page upon successful login
     } catch (error) {
       console.error('Error during Login:', error);
     }
   };
+
+
 
   return (
     <Box
@@ -43,7 +71,15 @@ export default function Login() {
         <VStack spacing={4} align="flex-start" w="full">
           <Heading color="white">Login</Heading>
           <Text color="#e1bee7">Enter your email and password to Login</Text>
+          {message && (
+          <Alert status={error ? "error" : "success"} rounded="md">
+            <AlertIcon />
+          {message}
+         \
+          </Alert>
+        )}
         </VStack>
+
         <FormControl>
           <FormLabel color="white">E-mail Address</FormLabel>
           <Input
@@ -53,7 +89,8 @@ export default function Login() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             backgroundColor="#e1bee7"
-            color="#673ab7"
+            color="#white"
+            borderRadius={20}
           />
         </FormControl>
         <FormControl>
@@ -65,7 +102,8 @@ export default function Login() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             backgroundColor="#e1bee7"
-            color="#673ab7"
+            color="#white"
+            borderRadius={20}
           />
         </FormControl>
         <HStack w="full" justify="space-between">
@@ -80,6 +118,7 @@ export default function Login() {
           backgroundColor="#e1bee7"
           color="#673ab7"
           onClick={handleLogin}
+          borderRadius={20}
         >
           Login
         </Button>

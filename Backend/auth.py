@@ -10,13 +10,8 @@ from flask_cors import cross_origin, CORS
 
 auth = Blueprint('auth', __name__)
 
-# Correct CORS configuration
-# Allow requests from any origin for '/sign-up' route
-# CORS(auth, resources={r"/sign-up": {"origins": "*"}})
-
 
 @auth.post('/sign-up')
-# @cross_origin(origin='http://localhost:5173', headers=['Content-Type', 'Authorization'])
 def sign_up():
     if request.method == 'OPTIONS':
         response = jsonify({'message': 'Preflight request successful'})
@@ -34,27 +29,27 @@ def sign_up():
 
         # password2 = request.form.get('password2')
 
-        # user = User.query.filter_by(email=email).first()
-        # if user:
-        #     return jsonify({'message': 'Account already exists with that email address'}), 400
-        # elif len(email) < 4:
-        #     return jsonify({'message': 'Email must be greater than 4 characters'}), 400
+        user = User.query.filter_by(email=email).first()
+        if user:
+            return jsonify({'message': 'Account already exists with that email address'}), 400
+        
+        elif len(email) < 4:
+            return jsonify({'message': 'Email must be greater than 4 characters'}), 400
 
-        # # elif (len(name) < 2 or len(surname) < 2):
-        # #         flash('Name must be greater than 1 character', category ='error')
-        # # # elif (password != password2):
-        # #     flash('Passwords do not match', category = 'error')
+        elif len(name) < 2 :
+               return jsonify({'message':'Name must be longer'}), 400
+        # elif (password != password2):
+        #    return jsonify({'Passwords do not match'}), 400
 
-        # else:
-        #     # add user to 
-        hashed_password = generate_password_hash(password, method='pbkdf2:sha256')
-        new_user = User(email=email, name=name, password=hashed_password)
-        # add to the database
-        db.session.add(new_user)
-        db.session.commit()
-        # login_user(user, remember=True)
-        flash('Account Created!', category='success')
-        return jsonify({'message': 'Account Created!', 'user_id': new_user.id}), 201
+        else:
+            # add user to 
+            hashed_password = generate_password_hash(password, method='pbkdf2:sha256')
+            new_user = User(email=email, name=name, password=hashed_password)
+            # add to the database
+            db.session.add(new_user)
+            db.session.commit()
+            # login_user(user, remember=True)
+            return jsonify({'message': 'Account Created!', 'user_id': new_user.id}), 201
 
 @auth.post('/login')
 def login():
@@ -67,15 +62,15 @@ def login():
         user = User.query.filter_by(email=email).first()
         if user:
             if check_password_hash(user.password, password):
-                flash('Logged in successfully!')
+            
                 login_user(user, remember=True) # remembers user is logined
                 return jsonify({'message': 'Logged in successfully!'}), 200
                 # return redirect(url_for('views.home'))
             else:
-                flash('Password incorrect, try again.', category='error')
+                return jsonify({'message':'Password incorrect, try again.'}), 400
         else:
-            flash('Email does no exist, please try again.', category='error')
-        return jsonify({'message': 'Authentication failed'}), 401
+
+         return jsonify({'message': 'Email does not exist, please try again or sign up.'}), 400
             
       
    
