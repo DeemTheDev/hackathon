@@ -1,47 +1,35 @@
 import {
-  Center,
-  Image,
-  Text,
-  Stack,
-  Divider,
-  Button,
   Box,
-  Heading,
-  Card,
-  CardBody,
-  CardFooter,
+  Container,
+  Stack,
+  Text,
+  Link,
+  useColorModeValue,
 } from "@chakra-ui/react";
 
-const FooterContent = () => {
+export default function FooterContent() {
   return (
-    <Box mt="3rem">
-      <Center>
-        <Heading>Developers </Heading>
-      </Center>
-      <br />
-      <Card maxW="xs">
-        <CardBody>
-          <Image
-            src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-            borderRadius="lg"
-          />
-          <Stack mt="6" spacing="3">
-            <Heading size="md">Nadeem Mohammed</Heading>
-
-            <Text color="blue.600" fontSize="2xl">
-              Team Leader
-            </Text>
-          </Stack>
-        </CardBody>
-        <Divider />
-        <CardFooter>
-          <Button variant="solid" colorScheme="teal">
-            GitHub
-          </Button>
-        </CardFooter>
-      </Card>
+    <Box
+      bg={useColorModeValue("gray.50", "gray.900")}
+      color={useColorModeValue("gray.700", "gray.200")}
+    >
+      <Container
+        as={Stack}
+        maxW={"6xl"}
+        py={4}
+        direction={{ base: "column", md: "row" }}
+        spacing={4}
+        justify={{ base: "center", md: "space-between" }}
+        align={{ base: "center", md: "center" }}
+      >
+        <Stack direction={"row"} spacing={6}>
+          <Link href={"#"}>Home</Link>
+          <Link href={"#"}>About</Link>
+          <Link href={"#"}>Blog</Link>
+          <Link href={"#"}>Contact</Link>
+        </Stack>
+        <Text>© 2022 Chakra Templates. All rights reserved</Text>
+      </Container>
     </Box>
   );
-};
-
-export default FooterContent;
+}

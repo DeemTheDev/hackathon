@@ -14,14 +14,14 @@ import { ReactTyped } from "react-typed";
 const AnimatedText = () => {
   return (
     <VStack w="70%" padding={5}>
-      <Heading as="h1" size="2xl">
+      <Heading as="h1" size="2xl" h="8.5rem">
         <ReactTyped
           strings={["Experience the Future of Diagnosis with Dr. AI"]}
           typeSpeed={50}
         />
       </Heading>
       <br />
-      <Accordion w="100%">
+      <Accordion w="100%" defaultIndex={0} allowMultiple>
         <AccordionItem>
           <h2>
             <AccordionButton>

@@ -6,11 +6,13 @@ import React, {
   ScaleFade,
   AbsoluteCenter,
   useDisclosure,
+  AlertDialogHeader,
   AlertDialog,
   AlertDialogBody,
   AlertDialogFooter,
   AlertDialogContent,
   AlertDialogOverlay,
+  Text,
 } from "@chakra-ui/react";
 const BackendButtons = () => {
   const { isOpen, onOpen, onToggle, onClose } = useDisclosure();
@@ -24,6 +26,9 @@ const BackendButtons = () => {
           <AlertDialog isOpen={isOpen} onClose={onClose}>
             <AlertDialogOverlay>
               <AlertDialogContent>
+                <AlertDialogHeader>
+                  <Text>Choose:</Text>
+                </AlertDialogHeader>
                 <AlertDialogBody>
                   <Flex justifyContent="space-evenly" gap="1rem" p="1rem">
                     <Button colorScheme="blue">
@@ -39,7 +44,7 @@ const BackendButtons = () => {
                         href="http://localhost:8502"
                         style={{ textDecoration: "none" }}
                       >
-                        Take Treatment
+                        Get Treatment
                       </Link>
                     </Button>
                   </Flex>
