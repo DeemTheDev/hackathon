@@ -79,13 +79,9 @@ st.sidebar.title('User Inputs')
 #Choose disease from Disease Diagnosis
 
 
-# Import the diagnosis module
-from diagnosis import get_disease_options
 
-# Get disease options
-disease_options = get_disease_options()
 
-disease  = st.sidebar.selectbox('Select Disease', disease_options)
+disease  = st.sidebar.selectbox('Select Disease', ["HIV", "STI's", "Diabetes"])
 age = st.sidebar.number_input('Age', min_value=0, max_value=120, value=30)
 gender = st.sidebar.selectbox('Gender', ['Male', 'Female'])
 symptoms = st.sidebar.text_area('Symptoms (optional)')

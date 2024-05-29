@@ -25,15 +25,9 @@ with right_column:
 
 #Side Navigation Bar
 st.sidebar.title('Navigation')
-home = st.sidebar.button('Home')
-if home:
-    st.sidebar.link_button("Navigate to Home")
-st.sidebar.button('Sign Out')
-treatment =st.sidebar.link_button('Treatment Plan', "http://localhost:8501/")
-
-
-
-
+st.sidebar.link_button('Home', url="http://localhost:5173/")
+st.sidebar.button('Sign Out', "http://localhost:5173/")
+treatment =st.sidebar.link_button('Treatment Plan', "http://localhost:8502/")
 
 
 
@@ -267,6 +261,7 @@ Rash over the trunk, hands or feet.
 
 
 """
+    
     # Initialize the model for text generation
     image_model = genai.GenerativeModel(
         model_name="gemini-1.5-flash",
