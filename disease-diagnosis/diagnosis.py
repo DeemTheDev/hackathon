@@ -174,7 +174,7 @@ with testDiagnose:
 
             # Display button only if keywords are found in chat history
         if show_button:
-            st.link_button("Get Treatment", "http://localhost:8501/")
+            st.link_button("Get Treatment", "http://localhost:8502/")
                 # Add functionality to be executed when the button is clicked
         else: 
             st.link_button("Get Treatment 1", "#")
