@@ -20,7 +20,7 @@ function Chatbox() {
       setIsLoading(true); // Set isLoading to true before sending request
   
       setTimeout(() => {
-        fetch('http://127.0.0.1:5000/predict', {
+        fetch('https://192.168.18.11:5000/predict', {
           method: 'POST',
           body: JSON.stringify({ message: inputText }),
           mode: 'cors',

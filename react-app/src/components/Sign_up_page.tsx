@@ -28,7 +28,7 @@ export default function Signup({setIsSignUpOpen}: SignUpProps) {
 
   const handleSignup = async () => {
     try {
-      const response = await fetch('http://127.0.0.1:5000/auth/sign-up', {
+      const response = await fetch('https://192.168.18.11:5000/auth/sign-up', {
         method: 'POST',
         body: JSON.stringify({ name: name, email: email, password: password }),
         mode: 'cors',
@@ -50,6 +50,7 @@ export default function Signup({setIsSignUpOpen}: SignUpProps) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
       console.log('Signup successful');
+      setIsSignUpOpen(false);
       navigate('/')
     } catch (error) {
       console.error('Error during signup:', error);

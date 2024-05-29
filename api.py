@@ -20,4 +20,5 @@ def predict():
     return jsonify(message)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    context=('cert.pem', 'key.pem')
+    app.run(debug=True, host='192.168.18.11', port=5000, ssl_context=context)
