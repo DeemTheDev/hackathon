@@ -29,7 +29,9 @@ const BackendButtons = () => {
                     <Button colorScheme="blue">
                       <Link href="http://localhost:8501">Take Diagnosis</Link>
                     </Button>
-                    <Button colorScheme="purple">Treatment Plan</Button>
+                    <Button colorScheme="purple">
+                      <Link href="http://localhost:8502">Take Treatment</Link>
+                    </Button>
                   </Flex>
                 </AlertDialogBody>
 

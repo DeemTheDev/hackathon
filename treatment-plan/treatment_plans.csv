@@ -1,0 +1,13 @@
+Disease,Age,Gender,Medication,Dosage,Prevention,Diet
+HIV,25,Male,Antiretroviral Therapy (ART),"Once daily","Use condoms, healthy diet","Avoid alcohol, balanced diet"
+HIV,30,Female,Antiretroviral Therapy (ART),"Once daily","Use condoms, healthy diet","Avoid alcohol, balanced diet"
+TB,40,Male,"Isoniazid, Rifampin, Pyrazinamide, and Ethambutol","Daily","Use a mask, get vaccinated","Increase vitamin D, balanced diet"
+TB,35,Female,"Isoniazid, Rifampin, Pyrazinamide, and Ethambutol","Daily","Use a mask, get vaccinated","Increase vitamin D, balanced diet"
+Diabetes,50,Male,Metformin,"500mg twice daily","Monitor blood sugar, exercise regularly","Low-carb, high-fiber diet"
+Diabetes,45,Female,Metformin,"500mg twice daily","Monitor blood sugar, exercise regularly","Low-carb, high-fiber diet"
+HIV,65,Male,Antiretroviral Therapy (ART),"Once daily","Use condoms, healthy diet","Avoid alcohol, balanced diet"
+HIV,55,Female,Antiretroviral Therapy (ART),"Once daily","Use condoms, healthy diet","Avoid alcohol, balanced diet"
+TB,70,Male,"Isoniazid, Rifampin, Pyrazinamide, and Ethambutol","Daily","Use a mask, get vaccinated","Increase vitamin D, balanced diet"
+TB,60,Female,"Isoniazid, Rifampin, Pyrazinamide, and Ethambutol","Daily","Use a mask, get vaccinated","Increase vitamin D, balanced diet"
+Diabetes,75,Male,Metformin,"500mg twice daily","Monitor blood sugar, exercise regularly","Low-carb, high-fiber diet"
+Diabetes,65,Female,Metformin,"500mg twice daily","Monitor blood sugar, exercise regularly","Low-carb, high-fiber diet"
