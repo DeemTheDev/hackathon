@@ -16,6 +16,12 @@ mysql-connector-python = "*"
 vertexai = "*"
 pypdf2 = "*"
 python-dotenv = "*"
+scikit-learn = "*"
+fpdf = "*"
+langchain = "*"
+langchain-openai = "*"
+langchain-community = "*"
+streamlit-lottie = "*"
 
 [dev-packages]
 
