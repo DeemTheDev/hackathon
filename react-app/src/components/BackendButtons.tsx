@@ -27,10 +27,20 @@ const BackendButtons = () => {
                 <AlertDialogBody>
                   <Flex justifyContent="space-evenly" gap="1rem" p="1rem">
                     <Button colorScheme="blue">
-                      <Link href="http://localhost:8501">Take Diagnosis</Link>
+                      <Link
+                        href="http://localhost:8501"
+                        style={{ textDecoration: "none" }}
+                      >
+                        Take Diagnosis
+                      </Link>
                     </Button>
                     <Button colorScheme="purple">
-                      <Link href="http://localhost:8502">Take Treatment</Link>
+                      <Link
+                        href="http://localhost:8502"
+                        style={{ textDecoration: "none" }}
+                      >
+                        Take Treatment
+                      </Link>
                     </Button>
                   </Flex>
                 </AlertDialogBody>
