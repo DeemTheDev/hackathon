@@ -31,7 +31,7 @@ export default function Login({setIsLoggedIn, setIsLoginOpen}: LoginProps) {
 
   const handleLogin = async () => {
     try {
-      const response = await fetch('https://192.168.18.11:5000/auth/login', {
+      const response = await fetch('http://127.0.0.1:5000/auth/login', {
         method: 'POST',
         body: JSON.stringify({email: email, password: password }),
         mode: 'cors',

@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, jsonify
 from chatbot.chat import get_Response
-from Backend.__init__ import create_app
+from Database.__init__ import create_app
 from flask_cors import CORS
 from flask_login import current_user, login_required
 
