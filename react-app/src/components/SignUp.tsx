@@ -15,37 +15,49 @@ import {
 import { useDisclosure } from "@chakra-ui/react";
 import React, { useState } from "react";
 import axios from "axios";
+import { Alert, AlertIcon} from "@chakra-ui/react";
 
 const SignUp = () => {
   //Form Input
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [message, setMessage] = useState('');
+  const [error, setError] = useState(false);
 
   //Page Functionality
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const [errorMessage, setErrorMessage] = useState(null);
-  const [successMessage, setSuccessMessage] = useState(null);
+
 
   //Function to handle when submitted:
-  const handleSubmit = async (e: React.SyntheticEvent) => {
-    e.preventDefault();
-    setErrorMessage(null);
-    setSuccessMessage(null);
-
+  const handleSignup = async () => {
     try {
-      const response = await axios.post("/signup", {
-        username,
-        email,
-        password,
+      const response = await fetch('http://127.0.0.1:5000/auth/sign-up', {
+        method: 'POST',
+        body: JSON.stringify({ username:username, email: email, password: password }),
+        mode: 'cors',
+        headers: {
+          'Content-Type': 'application/json'
+        }
       });
-      setSuccessMessage(response.data.message);
-      setUsername("");
-      setEmail("");
-      setPassword("");
+
+
+      const data = await response.json();
+      if (response.ok) {
+        setMessage(data.message);
+        setError(false);
+      } else {
+        setMessage(data.message);
+        setError(true);
+      }
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      console.log('Signup successful');
+  
     } catch (error) {
-      console.log(error);
-      setErrorMessage(null);
+      console.error('Error during signup:', error);
     }
   };
   return (
@@ -62,6 +74,13 @@ const SignUp = () => {
             </Text>
           </ModalHeader>
           <ModalCloseButton />
+          {message && (
+          <Alert status={error ? "error" : "success"} rounded="md">
+            <AlertIcon />
+            {message}
+          </Alert>
+        )}
+          
           <ModalBody pb={6}>
             <FormControl>
               <FormLabel fontWeight={700}>Username</FormLabel>
@@ -96,7 +115,7 @@ const SignUp = () => {
               colorScheme="teal"
               mr={3}
               type="submit"
-              onClick={handleSubmit}
+              onClick={handleSignup}
             >
               Save
             </Button>
