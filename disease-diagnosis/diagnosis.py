@@ -63,6 +63,7 @@ with testDiagnose:
 
     system_instructions = """
 
+    Use emojies, make it interactive and appealing to the users.
     You are a not actually diagnosing diseases, just deriving to a specific disease based on the symptoms related to it. Avoid saying you are not a medical expert, instead just reference the information below and how you derived to a specific disease from the users input about symptoms. At the end of you response be sure to add “Disease related to symptoms: ‘disease corresponding to symptoms’” for example if all the symptoms provides correlate to HIV, at the end of your response you should have: 
     “Symptoms related to Disease ‘HIV’ or 'Diabetes' or 'STI's'” . 
     Include links to blood labs in South Africa, Kwazulu-Natal for Durban.
@@ -133,7 +134,11 @@ with testDiagnose:
     # This sends prompt to the API using streamlit and generative models .start_chat method
     def generate_text_response(text_input):
         response = st.session_state.text_chat_session.send_message(text_input)
-        return response.text
+        if response is not None:
+            return response.text
+        else:
+            return "No response available"
+
 
     # Text only input:
     text_input = st.chat_input("Enter your text here:", key="text_chat")
@@ -141,7 +146,7 @@ with testDiagnose:
     
 
     # Appends input to API chat history and stores as user role for streamlit 
-    if text_input:
+    if text_input is not None and text_input != "":
         
         st.session_state.text_chat_history.append({
             "role": "user",
@@ -161,23 +166,18 @@ with testDiagnose:
             })
 
         # Display response
-        st.markdown(st.chat_message("assistant").write(response))
+        st.markdown(st.chat_message("assistant" ).write(response))
 
         # Search for keywords in the entire chat history and decide on button visibility (case-insensitive)
         keywords = ["hiv", "diabetes", "sti's"]
-        show_button = any(keyword in chat["content"].lower() for chat in st.session_state.text_chat_history for keyword in keywords)
-
-        #Get the disease found from AI dianosis
-        def get_disease_options():
-            disease_options = ["Diabetes", "HIV", "STI's"]
-            return disease_options
+        
 
             # Display button only if keywords are found in chat history
-        if show_button:
+        if any(keyword in chat["content"].lower() for chat in st.session_state.text_chat_history for keyword in keywords):
             st.link_button("Get Treatment", "http://localhost:8502/")
                 # Add functionality to be executed when the button is clicked
         else: 
-            st.link_button("Get Treatment 1", "#")
+            pass
 #----------TEXT DIAGNOSIS----------
 
 #----------END---------------------
