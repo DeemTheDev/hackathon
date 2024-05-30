@@ -1,6 +1,6 @@
 from flask import request, jsonify
 from chatbot.chat import get_Response
-from Database.__init__ import create_app
+from database.__init__ import create_app
 from flask_cors import CORS
 
 app = create_app()

@@ -14,31 +14,32 @@ import {
 } from "@chakra-ui/react";
 import { useDisclosure } from "@chakra-ui/react";
 import React, { useState } from "react";
-import { Alert, AlertIcon} from "@chakra-ui/react";
+import { Alert, AlertIcon } from "@chakra-ui/react";
 
 const SignUp = () => {
   //Form Input
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
-  const [message, setMessage] = useState('');
+  const [message, setMessage] = useState("");
   const [error, setError] = useState(false);
 
   //Page Functionality
   const { isOpen, onOpen, onClose } = useDisclosure();
 
-
   //Function to handle when submitted:
   const handleSignup = async () => {
     try {
-      const response = await fetch('http://127.0.0.1:5000/auth/sign-up', {
-        method: 'POST',
-        body: JSON.stringify({ username:username, email: email, password: password }),
-        mode: 'cors',
+      const response = await fetch("http://127.0.0.1:5000/auth/sign-up", {
+        method: "POST",
+        body: JSON.stringify({
+          username: username,
+          email: email,
+        }),
+        mode: "cors",
         headers: {
-          'Content-Type': 'application/json'
-        }
+          "Content-Type": "application/json",
+        },
       });
-
 
       const data = await response.json();
       if (response.ok) {
@@ -52,10 +53,9 @@ const SignUp = () => {
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
-      console.log('Signup successful');
-  
+      console.log("Signup successful");
     } catch (error) {
-      console.error('Error during signup:', error);
+      console.error("Error during signup:", error);
     }
   };
   return (
@@ -73,12 +73,12 @@ const SignUp = () => {
           </ModalHeader>
           <ModalCloseButton />
           {message && (
-          <Alert status={error ? "error" : "success"} rounded="md">
-            <AlertIcon />
-            {message}
-          </Alert>
-        )}
-          
+            <Alert status={error ? "error" : "success"} rounded="md">
+              <AlertIcon />
+              {message}
+            </Alert>
+          )}
+
           <ModalBody pb={6}>
             <FormControl>
               <FormLabel fontWeight={700}>Username</FormLabel>
@@ -95,15 +95,6 @@ const SignUp = () => {
                 placeholder="Email@email.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-              />
-            </FormControl>
-            <br />
-            <FormControl>
-              <FormLabel fontWeight={700}>Password</FormLabel>
-              <Input
-                placeholder="Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
               />
             </FormControl>
           </ModalBody>
