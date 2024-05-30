@@ -1,6 +1,13 @@
-import { Code, Divider, HStack, Text, Link, Button } from "@chakra-ui/react";
+import { Code, Divider, HStack, Text, Link, Image } from "@chakra-ui/react";
 
 import ColorMode from "./ColorMode";
+
+//Import Sign Up Button
+import SignUp from "./SignUp";
+
+//Import Logo
+import Logo from "../assets/2.svg";
+
 const Navbar = () => {
   return (
     <HStack
@@ -8,9 +15,10 @@ const Navbar = () => {
       justifyContent={"space-between"}
       alignItems={"center"}
     >
-      <Text color="#8338ec" fontSize={"30px"} fontWeight={"bold"}>
+      {/* <Text color="#8338ec" fontSize={"30px"} fontWeight={"bold"}>
         Doctor AI
-      </Text>
+      </Text> */}
+      <Image src={Logo} alt="Logo" width={90} height={90} />
       <HStack>
         <Link>
           <Code colorScheme="purple" children="Treatment Plan" />
@@ -19,9 +27,7 @@ const Navbar = () => {
           <Code colorScheme="blue" children="Disease Diagnosis" />
         </Link>
         <Divider orientation="vertical" h={5} />
-        <Button colorScheme="purple" size="md">
-          Sign Up
-        </Button>
+        <SignUp />
         <ColorMode />
       </HStack>
     </HStack>
