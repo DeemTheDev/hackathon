@@ -20,7 +20,6 @@ def sign_up():
         data = request.get_json()
         username = data.get('username')
         email = data.get('email')
-        password = data.get('password')
 
         user = User.query.filter_by(email=email).first()
         if user:
@@ -34,13 +33,12 @@ def sign_up():
         
         else:
             # add user to 
-            hashed_password = generate_password_hash(password, method='pbkdf2:sha256')
-            new_user = User(email=email, name=username, password=hashed_password)
+            new_user = User(email=email, name=username)
 
             # add to the database
             db.session.add(new_user)
             db.session.commit()
-            
+
             # login_user(user, remember=True)
             return jsonify({'message': 'Account Created!', 'user_id': new_user.id}), 201
 

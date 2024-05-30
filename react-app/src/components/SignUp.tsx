@@ -20,7 +20,6 @@ const SignUp = () => {
   //Form Input
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
   const [message, setMessage] = useState('');
   const [error, setError] = useState(false);
 
