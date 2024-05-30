@@ -1,0 +1,1215 @@
+{
+  "intents": [
+    {
+      "tag": "creator",
+      "patterns": [
+        "what is the name of your developers",
+        "what is the name of your creators",
+        "what is the name of the developers",
+        "what is the name of the creators",
+        "who created you",
+        "your developers",
+        "your creators",
+        "who are your developers",
+        "developers",
+        "you are made by",
+        "you are made by whom",
+        "who created you",
+        "who create you",
+        "creators",
+        "who made you",
+        "who designed you"
+      ],
+      "responses": [
+        "Nadeem , Azaria, Gareth, Ayanda, Ashish and Alex"
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "swear",
+      "patterns": [
+        "fuck",
+        "bitch",
+        "shut up",
+        "hell",
+        "stupid",
+        "idiot",
+        "dumb ass",
+        "asshole",
+        "fucker"
+      ],
+      "responses": [
+        "Please use appropriate language",
+        "Maintaining decency would be appreciated"
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Hi",
+        "Hey",
+        "Hello",
+        "Good morning",
+        "Good afternoon",
+        "Greetings",
+        "Howzit",
+        "Hello Dr"
+      ],
+      "responses": [
+        "Welcome to Dr Ai! How can I assist you today?",
+        "Hello, Its Dr AI! How can I help?",
+        "Hi there! Would you like to tell me your symptoms?"
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": [
+        "Bye",
+        "Goodbye",
+        "Cheers"
+      ],
+      "responses": [
+        "Goodbye! Take care.",
+        "Bye! Have a great day.",
+        "See you later! Hope that you feel better"
+      ]
+    },
+    {
+      "tag": "thanks",
+      "patterns": [
+        "Thanks",
+        "Thank you",
+        "Appreciate it",
+        "Thanks a lot",
+        "Thank you very much",
+        "Much obliged"
+      ],
+      "responses": [
+        "You're welcome, I Hope You Feel Better",
+        "Glad I could help, Get Well soon.",
+        "No Problem, Get Well Soon."
+      ]
+    },
+    {
+      "tag": "flu",
+      "patterns": [
+        "I have a fever",
+        "I have chills",
+        "I have a sore throat",
+        "I feel weak",
+        "I have muscle pain",
+        "I'm experiencing fatigue",
+        "My nose is congested",
+        "I have a runny nose",
+        "I have nausea",
+        "I have vomiting"
+      ],
+      "responses": [
+        "It sounds like you may have the flu. The flu is a contagious respiratory illness caused by influenza viruses. Rest, drink fluids, and consider seeing a healthcare provider for further evaluation and treatment if necessary."
+      ]
+    },
+    {
+      "tag": "tuberculosis",
+      "patterns": [
+        "I have a persistent cough",
+        "I have chest pain",
+        "I cough up blood",
+        "I have night sweats",
+        "I have weight loss",
+        "I have loss of appetite",
+        "I feel fatigued",
+        "I have difficulty breathing"
+      ],
+      "responses": [
+        "Your symptoms could indicate tuberculosis (TB). TB is a bacterial infection that primarily affects the lungs. It's important to seek medical attention promptly for diagnosis and treatment, as TB can be serious if left untreated."
+      ]
+    },
+    {
+      "tag": "HIV_FAQ_DonatingBlood",
+      "patterns": [
+        "Can I get HIV from donating Blood?"
+      ],
+      "responses": [
+        "No, it is highly unlikely to get HIV from donating blood. Blood donation procedures involve using sterile equipment and disposable needles, ensuring a very low risk of HIV transmission."
+      ]
+    },
+    {
+      "tag": "HIV_FAQ_SharingFood",
+      "patterns": [
+        "Can I get HIV through Sharing food?"
+      ],
+      "responses": [
+        "No, HIV cannot be transmitted through sharing food or eating utensils. HIV is primarily transmitted through specific bodily fluids such as blood, semen, vaginal fluids, and breast milk."
+      ]
+    },
+    {
+      "tag": "HIV_FAQ_Transmission",
+      "patterns": [
+        "How does someone get HIV?"
+      ],
+      "responses": [
+        "HIV is primarily transmitted through unprotected sexual intercourse, sharing needles or syringes with someone who has HIV, or from mother to child during pregnancy, childbirth, or breastfeeding. It can also be transmitted through blood transfusions with contaminated blood, though this is rare in countries with strict blood screening protocols."
+      ]
+    },
+    {
+      "tag": "HIV_FAQ_Toilet",
+      "patterns": [
+        "Can you get HIV from sitting on a toilet?"
+      ],
+      "responses": [
+        "No, HIV cannot be transmitted through sitting on a toilet seat. HIV is a fragile virus that cannot survive long outside the body, and it cannot be transmitted through casual contact or environmental surfaces."
+      ]
+    },
+    {
+      "tag": "HIV_FAQ_NoSex",
+      "patterns": [
+        "Can I have HIV without having sex?"
+      ],
+      "responses": [
+        "Yes, while sexual contact is the most common mode of HIV transmission, it is possible to acquire HIV through other means such as sharing needles or syringes with an infected person, receiving contaminated blood transfusions, or from mother to child during pregnancy, childbirth, or breastfeeding."
+      ]
+    },
+    {
+      "tag": "HIV_FAQ_Invalid",
+      "patterns": [
+        "Can I get HIV from [invalid action or scenario]?"
+      ],
+      "responses": [
+        "No, HIV cannot be transmitted through [invalid action or scenario]. HIV is primarily transmitted through specific bodily fluids such as blood, semen, vaginal fluids, and breast milk."
+      ]
+    },
+    {
+      "tag": "Diabetes_FAQ_Cure",
+      "patterns": [
+        "Can Diabetes be cured?"
+      ],
+      "responses": [
+        "Currently, there is no cure for diabetes, but it can be managed effectively with the right treatment plan, including lifestyle changes, medications, and insulin therapy."
+      ]
+    },
+    {
+      "tag": "Diabetes_FAQ_Sex",
+      "patterns": [
+        "Can I have diabetes from having sex?"
+      ],
+      "responses": [
+        "No, diabetes is not sexually transmitted. Diabetes develops due to various factors such as genetics, lifestyle, and environmental influences, but it is not caused by sexual activity."
+      ]
+    },
+    {
+      "tag": "Diabetes_FAQ_Transmission",
+      "patterns": [
+        "Can I have diabetes from someone else?"
+      ],
+      "responses": [
+        "No, diabetes is not contagious and cannot be transmitted from one person to another like a viral or bacterial infection."
+      ]
+    },
+    {
+      "tag": "Diabetes_FAQ_Invalid",
+      "patterns": [
+        "Can I get Diabetes from [invalid action or scenario]?"
+      ],
+      "responses": [
+        "No, diabetes cannot be acquired from [invalid action or scenario]. Diabetes develops due to various factors such as genetics, lifestyle, and environmental influences."
+      ]
+    },
+    {
+      "tag": "STIs_FAQ_ToiletKissing",
+      "patterns": [
+        "Can I get an STI from sitting on a toilet seat or from kissing someone?"
+      ],
+      "responses": [
+        "It's highly unlikely to get an STI from sitting on a toilet seat. STIs are primarily transmitted through sexual contact, including vaginal, anal, and oral sex, as well as through skin-to-skin contact with an infected person's genitals or mouth. Kissing someone with an STI may pose a risk for certain infections transmitted through saliva, such as herpes or syphilis."
+      ]
+    },
+    {
+      "tag": "STIs_FAQ_Cured",
+      "patterns": [
+        "Can STIs be cured?"
+      ],
+      "responses": [
+        "Many bacterial STIs can be cured with antibiotics, while viral STIs cannot be cured but can be managed with medication. It's important to seek medical attention for proper diagnosis and treatment of STIs."
+      ]
+    },
+    {
+      "tag": "STIs_FAQ_Invalid",
+      "patterns": [
+        "Can I get an STI from [invalid action or scenario]?"
+      ],
+      "responses": [
+        "It's highly unlikely to get an STI from [invalid action or scenario]. STIs are primarily transmitted through sexual contact, including vaginal, anal, and oral sex, as well as through skin-to-skin contact with an infected person's genitals."
+      ]
+    },
+    {
+      "tag": "HIV_FAQ_Difference",
+      "patterns": [
+        "What is the difference between HIV and AIDS?"
+      ],
+      "responses": [
+        "HIV stands for Human Immunodeficiency Virus, which is the virus that can lead to Acquired Immunodeficiency Syndrome (AIDS). HIV attacks the immune system, specifically targeting CD4 cells (T cells), which are crucial for the body's defense against infections and diseases. If left untreated, HIV can progress to AIDS, which is the most advanced stage of HIV infection. AIDS is diagnosed when the immune system is severely compromised, and the person becomes vulnerable to opportunistic infections or cancers."
+      ]
+    },
+    {
+      "tag": "HIV_FAQ_WhatIsHIV",
+      "patterns": [
+        "What is HIV?"
+      ],
+      "responses": [
+        "HIV (Human Immunodeficiency Virus) is a virus that attacks the immune system, specifically targeting CD4 cells (T cells), which are crucial for the body's defense against infections and diseases. HIV weakens the immune system over time, making it harder for the body to fight off infections and diseases. Without treatment, HIV can lead to Acquired Immunodeficiency Syndrome (AIDS), the most advanced stage of HIV infection."
+      ]
+    },
+    {
+      "tag": "HIV_FAQ_Treatment",
+      "patterns": [
+        "What are the treatment options for HIV?"
+      ],
+      "responses": [
+        "Treatment for HIV usually involves antiretroviral therapy (ART), which consists of a combination of medications to control the virus and prevent its progression. These medications help reduce the viral load in the body, boost the immune system, and decrease the risk of transmitting HIV to others."
+      ]
+    },
+    {
+      "tag": "Diabetes_FAQ_Management",
+      "patterns": [
+        "How can I effectively manage diabetes?"
+      ],
+      "responses": [
+        "Effective management of diabetes involves adopting a healthy lifestyle, including a balanced diet, regular physical activity, monitoring blood sugar levels, taking medications as prescribed, and attending regular medical check-ups."
+      ]
+    },
+    {
+      "tag": "Diabetes_FAQ_Symptoms",
+      "patterns": [
+        "What are the common symptoms of diabetes?"
+      ],
+      "responses": [
+        "Common symptoms of diabetes include frequent urination, excessive thirst, extreme hunger, unexplained weight loss, fatigue, blurred vision, slow wound healing, and recurring infections."
+      ]
+    },
+    {
+      "tag": "Diabetes_FAQ_RiskFactors",
+      "patterns": [
+        "What are the risk factors for developing diabetes?"
+      ],
+      "responses": [
+        "Risk factors for developing diabetes include family history, being overweight or obese, leading a sedentary lifestyle, having a poor diet high in processed foods and sugars, being over the age of 45, and belonging to certain ethnic groups."
+      ]
+    },
+    {
+      "tag": "STIs_FAQ_Prevention",
+      "patterns": [
+        "How can I prevent contracting STIs?"
+      ],
+      "responses": [
+        "Preventing STIs involves practicing safe sex, using condoms correctly and consistently, getting vaccinated for preventable STIs like HPV, having open and honest conversations with sexual partners about sexual health, getting tested regularly, and avoiding high-risk behaviors such as sharing needles or engaging in unprotected sex."
+      ]
+    },
+    {
+      "tag": "STIs_FAQ_Testing",
+      "patterns": [
+        "How often should I get tested for STIs?"
+      ],
+      "responses": [
+        "The frequency of STI testing depends on your sexual activity and risk factors. It's recommended to get tested for STIs regularly if you're sexually active or if you have multiple sexual partners. Talk to your healthcare provider about your individual risk factors and testing schedule."
+      ]
+    },
+    {
+      "tag": "STIs_FAQ_Types",
+      "patterns": [
+        "What are the different types of STIs?"
+      ],
+      "responses": [
+        "STIs (sexually transmitted infections) encompass a wide range of infections transmitted through sexual contact. Common types of STIs include chlamydia, gonorrhea, syphilis, herpes, HPV (human papillomavirus), HIV (human immunodeficiency virus), and trichomoniasis."
+      ]
+    },
+    {
+      "tag": "Diabetes_Symptoms",
+      "patterns": [
+        "My symptoms are: Frequent Urination , Excessive Thirst, Extreme Hunger, Weight Loss, Fatigue"
+      ],
+      "responses": [
+        "Your symptoms could indicate diabetes. Diabetes is a chronic condition that affects how your body processes blood sugar (glucose). It's important to seek medical attention promptly for diagnosis and treatment, as diabetes can lead to serious health complications if left unmanaged."
+      ]
+    },
+    {
+      "tag": "Diabetes_Management",
+      "patterns": [
+        "How do you manage diabetes?"
+      ],
+      "responses": [
+        "Diabetes management includes monitoring blood sugar levels, following a healthy diet, exercising regularly, and taking medications or insulin as prescribed by a doctor."
+      ]
+    },
+    {
+      "tag": "Diabetes_Symptoms_List",
+      "patterns": [
+        "What are the symptoms of diabetes?"
+      ],
+      "responses": [
+        "Symptoms of diabetes include increased thirst, frequent urination, extreme fatigue, blurred vision, and slow healing of wounds."
+      ]
+    },
+    {
+      "tag": "Diabetes_Treatment",
+      "patterns": [
+        "How to treat diabetes?"
+      ],
+      "responses": [
+        "To treat diabetes, maintain a balanced diet, exercise regularly, monitor your blood sugar levels, and take any medications or insulin prescribed by your healthcare provider."
+      ]
+    },
+    {
+      "tag": "Diabetes_WhatToDo",
+      "patterns": [
+        "What should I do if I have diabetes?"
+      ],
+      "responses": [
+        "If you have diabetes, it's important to follow a treatment plan created with your healthcare provider, including diet, exercise, and medication."
+      ]
+    },
+    {
+      "tag": "Diabetes_Medications",
+      "patterns": [
+        "What medications are used for diabetes?"
+      ],
+      "responses": [
+        "Medications for diabetes include insulin, metformin, sulfonylureas, and more, depending on the type and severity of the condition."
+      ]
+    },
+    {
+      "tag": "Diabetes_BloodSugarControl",
+      "patterns": [
+        "How to control blood sugar levels?"
+      ],
+      "responses": [
+        "To control blood sugar levels, eat a balanced diet low in sugars and refined carbs, exercise regularly, and monitor your blood glucose levels."
+      ]
+    },
+    {
+      "tag": "Diabetes_Diet",
+      "patterns": [
+        "What diet should a diabetic follow?"
+      ],
+      "responses": [
+        "A diabetic diet should include plenty of vegetables, whole grains, lean proteins, and healthy fats, while avoiding sugary and processed foods."
+      ]
+    },
+    {
+      "tag": "Diabetes_Cure",
+      "patterns": [
+        "Can diabetes be cured?"
+      ],
+      "responses": [
+        "Currently, there is no cure for diabetes, but it can be managed effectively with the right treatment plan."
+      ]
+    },
+    {
+      "tag": "Diabetes_Prevention",
+      "patterns": [
+        "How do you prevent diabetes?"
+      ],
+      "responses": [
+        "Preventing diabetes involves maintaining a healthy weight, eating a balanced diet, exercising regularly, and avoiding smoking."
+      ]
+    },
+    {
+      "tag": "Diabetes_Complications",
+      "patterns": [
+        "What are the complications of diabetes?"
+      ],
+      "responses": [
+        "Complications of diabetes can include heart disease, nerve damage, kidney damage, eye damage, foot problems, and more."
+      ]
+    },
+    {
+      "tag": "Diabetes_Exercises",
+      "patterns": [
+        "What exercises are good for diabetes?"
+      ],
+      "responses": [
+        "Exercises that are good for diabetes include walking, swimming, cycling, strength training, and yoga."
+      ]
+    },
+    {
+      "tag": "Diabetes_Insulin",
+      "patterns": [
+        "How does insulin help in diabetes?"
+      ],
+      "responses": [
+        "Insulin helps manage diabetes by allowing your body to use sugar (glucose) from carbohydrates in the food you eat for energy or to store glucose for future use."
+      ]
+    },
+    {
+      "tag": "Diabetes_TypeDifference",
+      "patterns": [
+        "What is the difference between type 1 and type 2 diabetes?"
+      ],
+      "responses": [
+        "Type 1 diabetes is an autoimmune condition where the body attacks insulin-producing cells in the pancreas and Type 2 diabetes is a condition where the body becomes resistant to insulin or doesn't produce enough insulin."
+      ]
+    },
+    {
+      "tag": "Diabetes_Testing",
+      "patterns": [
+        "How do you check for diabetes?"
+      ],
+      "responses": [
+        "Diabetes can be diagnosed through blood tests such as the fasting blood glucose test, A1C test, and oral glucose tolerance test."
+      ]
+    },
+    {
+      "tag": "HIV/AIDS_Symptoms",
+      "patterns": [
+        "My symptoms are: Persistent cough, Chest pain, Fatigue, Fever, Night sweats, Weight loss, Loss of appetite, Chills, and Shortness of breath."
+      ],
+      "responses": [
+        "Your symptoms could include HIV/AIDS. HIV is a virus that attacks the immune system, and AIDS is the most advanced stage of HIV infection. Common symptoms include flu-like symptoms, swollen lymph nodes, rash, rapid weight loss, recurring fever, and opportunistic infections. It's important to seek medical attention promptly for diagnosis and treatment, as early intervention can significantly improve health outcomes."
+      ]
+    },
+    {
+      "tag": "HIV/AIDS_Treatment",
+      "patterns": [
+        "How do you treat HIV/AIDS?"
+      ],
+      "responses": [
+        "HIV/AIDS is treated with antiretroviral therapy (ART), which helps control the virus and prevent transmission."
+      ]
+    },
+    {
+      "tag": "HIV/AIDS_Symptoms_List",
+      "patterns": [
+        "What are the symptoms of HIV/AIDS?"
+      ],
+      "responses": [
+        "Symptoms of HIV can include flu-like symptoms, swollen lymph nodes, and rash. AIDS symptoms are more severe, including rapid weight loss, recurring fever, and opportunistic infections."
+      ]
+    },
+    {
+      "tag": "HIV/AIDS_Medications",
+      "patterns": [
+        "What medications are used for HIV/AIDS?"
+      ],
+      "responses": [
+        "Medications for HIV/AIDS include antiretroviral drugs like AZT, lamivudine, and protease inhibitors."
+      ]
+    },
+    {
+      "tag": "HIV/AIDS_Management",
+      "patterns": [
+        "How to manage HIV/AIDS?"
+      ],
+      "responses": [
+        "Managing HIV/AIDS involves taking ART regularly, maintaining a healthy lifestyle, and regular medical check-ups."
+      ]
+    },
+    {
+      "tag": "HIV/AIDS_Transmission",
+      "patterns": [
+        "How is HIV/AIDS transmitted?"
+      ],
+      "responses": [
+        "HIV/AIDS is transmitted through contact with infected bodily fluids, such as blood, semen, vaginal fluids, and breast milk."
+      ]
+    },
+    {
+      "tag": "HIV/AIDS_WhatToDo",
+      "patterns": [
+        "What should I do if I think I have HIV?"
+      ],
+      "responses": [
+        "If you think you have HIV, get tested as soon as possible. Early diagnosis and treatment can significantly improve health outcomes."
+      ]
+    },
+    {
+      "tag": "HIV/AIDS_Cure",
+      "patterns": [
+        "Can HIV be cured?"
+      ],
+      "responses": [
+        "Currently, there is no cure for HIV, but it can be effectively managed with proper treatment."
+      ]
+    },
+    {
+      "tag": "HIV/AIDS_Difference",
+      "patterns": [
+        "What is the difference between HIV and AIDS?"
+      ],
+      "responses": [
+        "HIV is the virus that causes AIDS. HIV attacks the immune system, and AIDS is the most advanced stage of HIV infection."
+      ]
+    },
+    {
+      "tag": "HIV/AIDS_Prevention",
+      "patterns": [
+        "How do you prevent HIV?"
+      ],
+      "responses": [
+        "Preventing HIV involves safe sex practices, using condoms, not sharing needles, and taking PrEP if at high risk."
+      ]
+    },
+    {
+      "tag": "HIV/AIDS_ART",
+      "patterns": [
+        "What is antiretroviral therapy?"
+      ],
+      "responses": [
+        "Antiretroviral therapy (ART) is the use of HIV medicines to treat HIV infection."
+      ]
+    },
+    {
+      "tag": "HIV/AIDS_Stages",
+      "patterns": [
+        "What are the stages of HIV infection?"
+      ],
+      "responses": [
+        "The stages of HIV infection are acute infection, clinical latency, and AIDS."
+      ]
+    },
+    {
+      "tag": "HIV/AIDS_Testing",
+      "patterns": [
+        "How do you get tested for HIV?"
+      ],
+      "responses": [
+        "HIV testing can be done with blood or saliva tests. It's important to get tested regularly if you are at risk."
+      ]
+    },
+    {
+      "tag": "HIV/AIDS_NormalLife",
+      "patterns": [
+        "Can you live a normal life with HIV?"
+      ],
+      "responses": [
+        "Yes, with proper treatment and healthy lifestyle choices, people with HIV can live long, healthy lives."
+      ]
+    },
+    {
+      "tag": "HIV/AIDS_PrEP",
+      "patterns": [
+        "What is PrEP?"
+      ],
+      "responses": [
+        "PrEP (pre-exposure prophylaxis) is a medication taken by HIV-negative people to reduce their risk of becoming infected."
+      ]
+    },
+    {
+      "tag": "HIV/AIDS_ImmuneSystem",
+      "patterns": [
+        "How does HIV affect the immune system?"
+      ],
+      "responses": [
+        "HIV weakens the immune system by destroying important cells that fight disease and infection."
+      ]
+    },
+    {
+      "tag": "HIV/AIDS_PEP",
+      "patterns": [
+        "What is PEP?"
+      ],
+      "responses": [
+        "PEP (post-exposure prophylaxis) is an emergency treatment to prevent HIV after potential exposure."
+      ]
+    },
+    {
+      "tag": "STIs_Symptoms",
+      "patterns": [
+        "My symptoms are: Unusual discharge, Painful urination, Genital sores, Itching or irritation, Pain during intercourse, Lower abdominal pain."
+      ],
+      "responses": [
+        "Your symptoms could indicate a sexually transmitted infection (STI). Common symptoms of STIs include unusual discharge, painful urination, genital sores, itching or irritation, pain during intercourse, and lower abdominal pain. It's important to seek medical attention promptly for diagnosis and treatment, as STIs can lead to serious health complications if left untreated."
+      ]
+    },
+    {
+      "tag": "STIs_Treatment",
+      "patterns": [
+        "How do you treat STIs?"
+      ],
+      "responses": [
+        "STIs are treated depending on the type: bacterial STIs like chlamydia and gonorrhea are treated with antibiotics, while viral STIs like herpes and HIV are managed with antiviral medications."
+      ]
+    },
+    {
+      "tag": "STIs_Symptoms_List",
+      "patterns": [
+        "What are the symptoms of STIs?"
+      ],
+      "responses": [
+        "Symptoms of STIs vary but can include sores, unusual discharge, itching, burning during urination, and pain during sex."
+      ]
+    },
+    {
+      "tag": "STIs_Medications",
+      "patterns": [
+        "What medications are used for STIs?"
+      ],
+      "responses": [
+        "Medications for STIs vary: antibiotics for bacterial infections, antivirals for viral infections, and in some cases, there are vaccines to prevent certain STIs like HPV."
+      ]
+    },
+    {
+      "tag": "STIs_Management",
+      "patterns": [
+        "How to manage STIs?"
+      ],
+      "responses": [
+        "Managing STIs involves following your doctor's treatment plan, taking all prescribed medications, and notifying your sexual partners."
+      ]
+    },
+    {
+      "tag": "STIs_Transmission",
+      "patterns": [
+        "How are STIs transmitted?"
+      ],
+      "responses": [
+        "STIs are transmitted through sexual contact, including vaginal, anal, and oral sex, as well as through skin-to-skin contact and sharing needles."
+      ]
+    },
+    {
+      "tag": "STIs_WhatToDo",
+      "patterns": [
+        "What should I do if I think I have an STI?"
+      ],
+      "responses": [
+        "If you think you have an STI, see a healthcare provider for testing and treatment. Early diagnosis and treatment are important."
+      ]
+    },
+    {
+      "tag": "STIs_Cure",
+      "patterns": [
+        "Can STIs be cured?"
+      ],
+      "responses": [
+        "Many bacterial STIs can be cured with antibiotics, while viral STIs cannot be cured but can be managed with medication."
+      ]
+    },
+    {
+      "tag": "STIs_Prevention",
+      "patterns": [
+        "How do you prevent STIs?"
+      ],
+      "responses": [
+        "Preventing STIs involves using condoms, practicing safe sex, getting vaccinated for preventable STIs, and regular testing."
+      ]
+    },
+    {
+      "tag": "STIs_Types",
+      "patterns": [
+        "What are the common types of STIs?"
+      ],
+      "responses": [
+        "Common types of STIs include chlamydia, gonorrhea, syphilis, herpes, HPV, HIV, and trichomoniasis."
+      ]
+    },
+    {
+      "tag": "STIs_Testing",
+      "patterns": [
+        "How do you get tested for STIs?"
+      ],
+      "responses": [
+        "STI testing involves samples of blood, urine, or swabs from genital areas. Regular testing is recommended if sexually active."
+      ]
+    },
+    {
+      "tag": "STIs_BacterialVsViral",
+      "patterns": [
+        "What is the difference between viral and bacterial STIs?"
+      ],
+      "responses": [
+        "Bacterial STIs are caused by bacteria and can usually be cured with antibiotics, while viral STIs are caused by viruses and are managed with antivirals."
+      ]
+    },
+    {
+      "tag": "STIs_TalkingToPartner",
+      "patterns": [
+        "How do you talk to your partner about STIs?"
+      ],
+      "responses": [
+        "Talk to your partner about STIs openly and honestly, sharing any relevant health information and discussing safe sex practices."
+      ]
+    },
+    {
+      "tag": "STIs_HPV",
+      "patterns": [
+        "What is HPV?"
+      ],
+      "responses": [
+        "HPV (human papillomavirus) is a common viral STI that can cause genital warts and is linked to certain cancers."
+      ]
+    },
+    {
+      "tag": "STIs_Herpes",
+      "patterns": [
+        "What is herpes?"
+      ],
+      "responses": [
+        "Herpes is a viral STI that causes painful sores and blisters, typically around the mouth or genitals."
+      ]
+    },
+    {
+      "tag": "STIs_Chlamydia",
+      "patterns": [
+        "What is chlamydia?"
+      ],
+      "responses": [
+        "Chlamydia is a common bacterial STI that can cause genital pain and discharge and can be treated with antibiotics."
+      ]
+    },
+    {
+      "tag": "STIs_Gonorrhea",
+      "patterns": [
+        "What is gonorrhea?"
+      ],
+      "responses": [
+        "Gonorrhea is a bacterial STI that affects the genital tract, mouth, and rectum and can be treated with antibiotics."
+      ]
+    },
+    {
+      "tag": "STIs_Syphilis",
+      "patterns": [
+        "What is syphilis?"
+      ],
+      "responses": [
+        "Syphilis is a bacterial STI that progresses through stages and can cause serious health problems if not treated with antibiotics."
+      ]
+    },
+    {
+      "tag": "Cuts",
+      "patterns": [
+        "What to do if I have cuts?",
+        "How to cure cuts?",
+        "Which medicine to apply for cuts?",
+        "What to apply on cuts?",
+        "Cuts"
+      ],
+      "responses": [
+        "Wash the cut properly to prevent infection and stop the bleeding by applying pressure for 1-2 minutes until the bleeding stops. Apply petroleum jelly to keep the wound moist for quick healing. Finally, cover the cut with a sterile bandage. Pain relievers such as acetaminophen can be taken if needed."
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "stings",
+      "patterns": [
+        "How do you treat Sting?",
+        "Stings",
+        "What to do if you get a sting?",
+        "Which medicine to apply if sting?"
+      ],
+      "responses": [
+        "Remove any stingers immediately. Some experts recommend scraping out the stinger with a credit card. Applying ice to the site may provide some mild relief. Apply ice for 20 minutes once every hour as needed. Wrap the ice in a towel or keep a cloth between the ice and skin to keep from freezing the skin. Taking an antihistamine such as diphenhydramine (Benadryl) or a nonsedating one such as loratadine (Claritin) will help with itching and swelling. Take acetaminophen (Tylenol) or ibuprofen (Motrin)for pain relief as needed. Wash the sting site with soap and water. Placing hydrocortisone cream on the sting can help relieve redness, itching, and swelling."
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "Splinter",
+      "patterns": [
+        "How to remove Splinters",
+        "How to cure Splinters?",
+        "What to do if I have splinters?",
+        "How do you bring a splinter to the surface?"
+      ],
+      "responses": [
+        "1. SOAK IT IN EPSOM SALTS. Dissolve a cup of the salts into a warm bath and soak whatever part of the body has the splinter. Failing that, you can also put some of the salts onto a bandage pad and leave it covered for a day; this will eventually help bring the splinter to the surface. 2. VINEGAR OR OIL. Another simple way to draw out that stubborn splinter is to soak the affected area in oil (olive or corn) or white vinegar. Just pour some in a bowl and soak the area for around 20 to 30 minutes,"
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "Sprains",
+      "patterns": [
+        "How do you treat a sprain?",
+        "what to do if i get a sprain?",
+        "Which cream to apply if i get a sprain?",
+        "Which medicine to apply if I get a sprain?"
+      ],
+      "responses": [
+        "Use an ice pack or ice slush bath immediately for 15 to 20 minutes and repeat every two to three hours while you're awake. To help stop swelling, compress the ankle with an elastic bandage until the swelling stops. In most cases, pain relievers — such as ibuprofen (Advil, Motrin IB, others) or naproxen sodium (Aleve, others) or acetaminophen (Tylenol, others) are enough to manage the pain of a sprained ankle."
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "Fever",
+      "patterns": [
+        "How do you treat a mild Fever?",
+        "what to do if i get a mild fever?",
+        "Which medicine to take if I get a mild fever?",
+        "fever"
+      ],
+      "responses": [
+        "To treat a fever at home: 1)Drink plenty of fluids to stay hydrated. 2)Dress in lightweight clothing. 3)Use a light blanket if you feel chilled, until the chills end. 4)Take acetaminophen (Tylenol, others) or ibuprofen (Advil, Motrin IB, others). 5) Get medical help if the fever lasts more than five days in a row."
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "Nasal Congestion",
+      "patterns": [
+        "How do you treat nasal Congestion?",
+        "what to do if i get a nasal congestion?",
+        "Which medicine to take if I have a nasal congestion?",
+        "what to do if i have a blocked nose?",
+        "How do you treat a blocked nose?",
+        "How long does nasal congestion last?"
+      ],
+      "responses": [
+        "When you’re stuffed up, focus on keeping your nasal passages and sinuses moist. To keep your nasal passages moist, you can: 1)Use a humidifier or vaporizer. 2)Drink lots of fluids. This will thin out your mucus, which could help prevent blocked sinuses. 3)Place a warm, wet towel on your face. It may relieve discomfort and open your nasal passages."
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "Cough",
+      "patterns": [
+        "How to cure cough?",
+        "How do you treat cough?",
+        "what to do if i get a cough?",
+        "Which medicine to take if I get cough?",
+        "How do you get rid of cough?"
+      ],
+      "responses": [
+        "1) Honey:- Use honey to treat a cough, mix 2 teaspoons (tsp) with warm water or an herbal tea. Drink this mixture once or twice a day. Do not give honey to children under 1 year of age. 2) Ginger:- Brew up a soothing ginger tea by adding 20–40 grams (g) of fresh ginger slices to a cup of hot water. Allow to steep for a few minutes before drinking. Add honey or lemon juice to improve the taste and further soothe a cough. 3) Fluids:- Staying hydrated is vital for those with a cough or cold. Research indicates that drinking liquids at room temperature can alleviate a cough, runny nose, and sneezing."
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "Sore Throat",
+      "patterns": [
+        "How do you treat sore throat?",
+        "what to do if i get a sore throat?",
+        "Which medicine to take if I get a sore throat?",
+        "How to cure sore throat?"
+      ],
+      "responses": [
+        "1) Make sure you get plenty of rest and drink a lot of fluids. 2)Inhale steam,Run hot water in a sink.Drape a towel over you to trap the steam, and have the person lean over the sink with the water running. Tell him to breathe deeply through his mouth and nose for 5 to 10 minutes. Repeat several times a day. 3)Have him sip chicken broth or warm tea with honey. Don’t give honey to a child under 12 months of age."
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "Abdonominal Pain",
+      "patterns": [
+        "How do you treat Abdonominal Pain?",
+        "what to do if i get a Abdonominal Pain?",
+        "Which medicine to take if I get a Abdonominal Pain?",
+        "How to cure Abdonominal Pain?"
+      ],
+      "responses": [
+        "1)Provide clear fluids to sip, such as water, broth, or fruit juice diluted with water. 2)Serve bland foods, such as saltine crackers, plain bread, dry toast, rice, gelatin, or applesauce. 3)Avoid spicy or greasy foods and caffeinated or carbonated drinks until 48 hours after all symptoms have gone away. "
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "Bruises",
+      "patterns": [
+        "How do you treat Bruises?",
+        "what to do if i get a Bruise?",
+        "Which medicine to take if I get a Bruise?",
+        "How to cure Bruises?"
+      ],
+      "responses": [
+        "1)Ice the bruise with an ice pack wrapped in a towel. 2)Leave it in place for 10 to 20 minutes. 3)Repeat several times a day for a day or two as needed. 4)Compress the bruised area if it is swelling, using an elastic bandage. "
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "Choking",
+      "patterns": [
+        "How do you treat Choking?",
+        "what to do if i get a Choke?",
+        "Which medicine to take if I get Choked?",
+        "How to cure Choking?"
+      ],
+      "responses": [
+        "1)Encourage them to keep coughing to try to clear the blockage. 2)Ask them to try to spit out the object if it's in their mouth. 3)If coughing doesn't work, start back blows and Abdonominal thrusts"
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "Wound",
+      "patterns": [
+        "How do you treat a wound?",
+        "what to do if i get a Wound?",
+        "Which medicine to take if I get wounded?",
+        "How to cure a wound?"
+      ],
+      "responses": [
+        "1)Rinse the cut or wound with water and apply pressure with sterile gauze, a bandage, or a clean cloth. 2)If blood soaks through the bandage, place another bandage on top of the first and keep applying pressure. 3)Raise the injured body part to slow bleeding. 4)When bleeding stops, cover the wound with a new, clean bandage."
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "Diarrhea",
+      "patterns": [
+        "How do you treat Diarrhea?",
+        "what to do if i get Diarrhea?",
+        "Which medicine to take if I get Diarrhea?",
+        "How to cure Diarrhea?"
+      ],
+      "responses": [
+        "1)Hydrating the body is essential for recovering from diarrhea.This causes the body to lose electrolytes such as sodium and chloride. 2)It is highly recommended to avoid dairy products, as they may worsen diarrhea in some people. 3)However, if diarrhea lasts for more than 2 days, seek medical advice to avoid complications."
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "Heat Exhaustion",
+      "patterns": [
+        "How do you treat Heat Exhaustion?",
+        "what to do if i feel Exhausted due to heat?",
+        "Which medicine to take if I get Exhausted?",
+        "How to cure Heat Exhaustion?"
+      ],
+      "responses": [
+        "1) Move to a cooler place and rest.",
+        "2) Drink plenty of water or sports drinks to rehydrate.",
+        "3) Loosen or remove excess clothing.",
+        "4) Apply cool, wet cloths or take a cool shower.",
+        "5) Seek medical attention if symptoms worsen or do not improve."
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "Heat Stroke",
+      "patterns": [
+        "How do you treat Heat Stroke?",
+        "what to do if i get a Heat Stroke?",
+        "Which medicine to take if I get Stroke?",
+        "How to cure a Heat Stroke?"
+      ],
+      "responses": [
+        "1) Call emergency services immediately.",
+        "2) Move to a cooler place and cool down rapidly with cool cloths or a cool bath.",
+        "3) Do not give the person any fluids to drink.",
+        "4) Fan the person to promote sweating and evaporation.",
+        "5) Monitor the person's temperature and continue cooling efforts until help arrives."
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "Insect Bites",
+      "patterns": [
+        "How do you treat a Insect Bite?",
+        "what to do if a insect bites me?",
+        "Which medicine to take if I get bitten by a insect?",
+        "How to cure insect bite?"
+      ],
+      "responses": [
+        "1) Wash the affected area with soap and water.",
+        "2) Apply a cold pack to reduce swelling and pain.",
+        "3) Use over-the-counter antihistamines or hydrocortisone cream to relieve itching.",
+        "4) Avoid scratching the bite to prevent infection.",
+        "5) Seek medical attention if you experience severe reactions such as difficulty breathing or swelling."
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "nose bleed",
+      "patterns": [
+        "How do you treat a bleeding nose?",
+        "what to do if i my nose is bleeding?",
+        "Which medicine to take if I get nose bleed?",
+        "How to cure nose bleeding?"
+      ],
+      "responses": [
+        "1) Sit up straight and lean forward slightly.",
+        "2) Pinch the soft part of your nose shut for 10-15 minutes.",
+        "3) Apply a cold pack to your nose and cheeks.",
+        "4) Avoid blowing your nose or strenuous activity for several hours.",
+        "5) Seek medical attention if bleeding persists or is severe."
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "Pulled Muscle",
+      "patterns": [
+        "How do you treat a Pulled Muscle?",
+        "what to do if my muscle is pulled?",
+        "Which medicine to take if I got pulled muscle?",
+        "How to cure a pulled muscle?"
+      ],
+      "responses": [
+        "1) Rest the affected muscle and avoid strenuous activities.",
+        "2) Apply ice to reduce swelling and pain.",
+        "3) Use over-the-counter pain relievers like ibuprofen or acetaminophen.",
+        "4) Apply compression with an elastic bandage if necessary.",
+        "5) Gradually return to activity and perform gentle stretching exercises."
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "Sun Burn",
+      "patterns": [
+        "How do you treat Sun Burn?",
+        "what to do if i get a Sun Burn?",
+        "Which medicine to take if I get Sun Burn?",
+        "How to cure a Sun Burn?"
+      ],
+      "responses": [
+        "1) Apply cool compresses to the sunburned area.",
+        "2) Use aloe vera gel or moisturizing creams to soothe the skin.",
+        "3) Take over-the-counter pain relievers like ibuprofen or acetaminophen.",
+        "4) Stay hydrated by drinking plenty of water.",
+        "5) Avoid further sun exposure until the burn heals."
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "Normal Bleeding",
+      "patterns": [
+        "How do you treat bleeding?",
+        "what to do if i get a Bleeding?",
+        "Which medicine to take if I get bleeding?",
+        "How to cure Bleeding?"
+      ],
+      "responses": [
+        "1) Apply direct pressure to the wound with a clean cloth or bandage.",
+        "2) Elevate the injured area above the level of the heart if possible.",
+        "3) Clean the wound with mild soap and water once bleeding stops.",
+        "4) Apply an antiseptic ointment and cover with a sterile bandage.",
+        "5) Seek medical attention for deep or severe wounds."
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "seizure",
+      "patterns": [
+        "How do you treat a seizure?",
+        "what to do if i get a seizure?",
+        "Which medicine to take if I get seizure?",
+        "How to cure seizure?"
+      ],
+      "responses": [
+        "1) Protect the person from injury by clearing the area of hard or sharp objects.",
+        "2) Do not restrain the person or put anything in their mouth.",
+        "3) Place the person on their side to help keep their airway clear.",
+        "4) Time the seizure and call emergency services if it lasts longer than 5 minutes.",
+        "5) Stay with the person until the seizure ends and they are fully alert."
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "Head Injury",
+      "patterns": [
+        "How do you treat a head Injury?",
+        "what to do if i get a Head Injury?",
+        "Which medicine to take if I get injured in the head?",
+        "How to cure Head Injury?"
+      ],
+      "responses": [
+        "1) Apply ice to reduce swelling and pain.",
+        "2) Keep the person still and calm.",
+        "3) Monitor for any signs of severe symptoms such as confusion, vomiting, or loss of consciousness.",
+        "4) Take over-the-counter pain relievers if needed.",
+        "5) Seek immediate medical attention for any severe symptoms or if you suspect a concussion."
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "Fainting",
+      "patterns": [
+        "How do you treat Faint?",
+        "what to do if i feel like Fainting?",
+        "Which medicine to take if I get a Faint?",
+        "How to cure Fainting?"
+      ],
+      "responses": [
+        "1) Help the person lie down and elevate their legs to improve blood flow to the brain.",
+        "2) Loosen any tight clothing and ensure they have fresh air.",
+        "3) If the person feels faint, have them sit with their head between their knees.",
+        "4) Avoid giving any food or drink until they are fully alert.",
+        "5) Seek medical attention if the person does not regain consciousness quickly or if fainting recurs."
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "Headache",
+      "patterns": [
+        "How do you treat a mild Headache?",
+        "what to do if i get a mild Headache?",
+        "Which medicine to take if I have a mild headache?",
+        "How to cure a mild headache?"
+      ],
+      "responses": [
+        "Give ibuprofen (Advil, Motrin), aspirin, or acetaminophen (Tylenol) for pain. Avoid ibuprofen and other NSAIDs if the person has heart failure or kidney failure. Do not give aspirin to a child under age 18."
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "Rash",
+      "patterns": [
+        "How do you treat Rashes?",
+        "what to do if i get a Rash?",
+        "Which medicine to take if I have a Rash?",
+        "How to cure Rash?"
+      ],
+      "responses": [
+        "1)Olive oil helps in healing and promotes skin renewal given it is packed with vitamin E and antioxidants. It also soothes the skin and reduces itching. 2)Baking soda is useful in drying skin rashes as also in relieving itching and inflammation. 3)Aloe Vera,Thanks to its antibacterial, antifungal, anti-inflammatory and emollient properties, aloe vera is excellent for treating a number of skin ailments including rashes as also soothing the skin."
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "snake bite",
+      "patterns": [
+        "How do you treat a snake bite?",
+        "what to do if i get a snake bite?",
+        "Which medicine to take if I get a snake bite?",
+        "How to cure snake bite?",
+        "i got bit by a snake"
+      ],
+      "responses": [
+        "While waiting for medical help: 1)Move the person beyond striking distance of the snake. 2)Have the person lie down with wound below the heart. 3)Keep the person calm and at rest, remaining as still as possible to keep venom from spreading. 4)Cover the wound with loose, sterile bandage. 5)Remove any jewelry from the area that was bitten. 6)Remove shoes if the leg or foot was bitten."
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "animal bite",
+      "patterns": [
+        "How do you treat a animal bite?",
+        "How do you treat a monkey bite?",
+        "How do you treat a dog bite?",
+        "what to do if i get a animal bite?",
+        "Which medicine to take if I get a monekey bite?",
+        "How to cure dog bite?",
+        "i got bit by a dog"
+      ],
+      "responses": [
+        "1)Wash the wound with soap and warm water. 2)Gently press a clean cloth over the wound to stop the flow of blood. 3)Apply an antibacterial ointment to the wound. 4)Cover with a sterile bandage. 5)Watch for signs of infection. 6)Seek help if you suspect infection or possible exposure to rabies, or if the wound is severe."
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "Drowning",
+      "patterns": [
+        "What to do if someone is Drowning?",
+        "what to do if someone drowned?",
+        "What steps to take if i see a drowning person?",
+        "How to help a drowning person?"
+      ],
+      "responses": [
+        "1)Place your ear next to the person's mouth and nose. Do you feel air on your cheek? 2)Look to see if the person's chest is moving.If the Person is Not Breathing, Check Pulse. 3)Check the person's pulse for 10 seconds.If There is No Pulse, Start CPR."
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "CPR",
+      "patterns": [
+        "How to give CPR??",
+        "what to do in a CPR?",
+        "What steps to take in a CPR??",
+        "How to help a drowning person in CPR?"
+      ],
+      "responses": [
+        "1)For an adult or child, place the heel of one hand on the center of the chest at the nipple line. You can also push with one hand on top of the other. For an infant, place two fingers on the breastbone. 2)For an adult or child, press down at least 2 inches. Make sure not to press on ribs. For an infant, press down about 1 and 1/2 inches. Make sure not to press on the end of the breastbone. 3)Do chest compressions only, at the rate of 100-120 per minute or more. Let the chest rise completely between pushes. 4)Check to see if the person has started breathing."
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "Fracture",
+      "patterns": [
+        "How do you treat a Fracture?",
+        "what to do if i get a Fracture?",
+        "Which medicine to take if I have a Fracture?",
+        "How to cure a Fracture?"
+      ],
+      "responses": [
+        "1)Stop any bleeding. Apply pressure to the wound with a sterile bandage, a clean cloth or a clean piece of clothing. 2)Immobilize the injured area. Don't try to realign the bone or push a bone that's sticking out back in. If you've been trained in how to splint and professional help isn't readily available, apply a splint to the area above and below the fracture sites. Padding the splints can help reduce discomfort. 3)Apply ice packs to limit swelling and help relieve pain. Don't apply ice directly to the skin. Wrap the ice in a towel, piece of cloth or some other material. 4)Treat for shock. If the person feels faint or is breathing in short, rapid breaths, lay the person down with the head slightly lower than the trunk and, if possible, elevate the legs."
+      ],
+      "context_set": ""
+    }
+  ]
+}
