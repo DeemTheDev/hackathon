@@ -76,6 +76,57 @@
       ]
     },
     {
+      "tag": "HIV_AIDS",
+      "patterns": [
+        "I have a fever",
+        "I have a rash",
+        "I feel tired all the time",
+        "I have swollen lymph nodes",
+        "I have muscle aches",
+        "I have a sore throat",
+        "I have night sweats",
+        "I have diarrhea",
+        "I have a headache"
+      ],
+      "responses": [
+        "Your symptoms could indicate HIV/AIDS. HIV (Human Immunodeficiency Virus) weakens your immune system by destroying important cells that fight disease and infection. It's critical to get tested if you think you've been exposed to HIV and consult with a healthcare provider for accurate diagnosis and treatment options."
+      ]
+    },
+    {
+      "tag": "STI",
+      "patterns": [
+        "I have pain during urination",
+        "I have unusual discharge",
+        "I have genital sores",
+        "I have itching or irritation",
+        "I have lower abdominal pain",
+        "I have pain during intercourse",
+        "I have bleeding between periods"
+      ],
+      "responses": [
+        "Your symptoms could indicate a sexually transmitted infection (STI). Common STIs include chlamydia, gonorrhea, syphilis, and herpes. It's important to get tested and consult with a healthcare provider for an accurate diagnosis and appropriate treatment."
+      ]
+    },
+    {
+      "tag": "Diabetes",
+      "patterns": [
+        "I feel very thirsty",
+        "I feel very hungry",
+        "I urinate frequently",
+        "I pee frequently",
+        "I pee often",
+        "I have weight loss",
+        "I feel tired",
+        "I have blurry vision",
+        "My wounds heal slowly",
+        "I have slow-healing sores",
+        "I have frequent infections"
+      ],
+      "responses": [
+        "Your symptoms could indicate diabetes. Diabetes is a chronic condition that affects how your body turns food into energy. It's important to get tested and consult with a healthcare provider to manage your blood sugar levels and prevent complications."
+      ]
+    },
+    {
       "tag": "thanks",
       "patterns": [
         "Thanks",

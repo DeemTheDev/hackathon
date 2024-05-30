@@ -22,6 +22,8 @@ langchain = "*"
 langchain-openai = "*"
 langchain-community = "*"
 streamlit-lottie = "*"
+pyspellchecker = "*"
+pysmtplib = "*"
 
 [dev-packages]
 

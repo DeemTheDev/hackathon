@@ -1,6 +1,7 @@
 import pandas as pd
 import streamlit as st
 from fpdf import FPDF
+import smtplib
 import json
 from streamlit_lottie import st_lottie
 from sklearn.model_selection import train_test_split
@@ -130,17 +131,57 @@ if st.sidebar.button('VIEW TREATMENT PLAN'):
         st.write(f"Dosage: {plan['Dosage']}")
         st.write(f"Prevention: {plan['Prevention']}")
         st.write(f"Diet: {plan['Diet']}")
-        st.markdown("### DIET PLAN")
+        st.markdown("### DIET PLAN 🍎")
         st.write("1. Eat a balanced diet rich in fruits, vegetables, and lean proteins.")
         st.write("2. Limit intake of sugar and processed foods.")
         st.write("3. Monitor carbohydrate intake and follow a consistent meal schedule.")
-        st.markdown("### EXERCISE PLAN")
+        st.markdown("### EXERCISE PLAN 😰🏋️")
         st.write("1. Engage in moderate aerobic exercise for at least 30 minutes a day, 5 days a week.")
         st.write("2. Incorporate strength training exercises 2-3 times a week.")
         st.write("3. Consult with a healthcare provider before starting any new exercise regimen.")
 
         pdf_bytes = generate_pdf(plan, patient_name, date, selected_symptoms)
         st.download_button(label='Download Treatment Plan PDF', data=pdf_bytes, file_name='treatment_plan.pdf', mime='application/pdf')
+
+if st.sidebar.button('GET EMAIL'):
+    if not selected_symptoms:
+        st.error("PLEASE SELECT AT LEAST ONE SYMPTOM.")
+    else:
+        plan = get_treatment_plan(disease, age, gender, selected_symptoms)
+        #DR AI email:
+        sender_email = "drai.rucvitualconsult@gmail.com"
+        #Patients email: Get from dbs
+        receiver_email = "ziaeetechnologies@gmail.com"
+
+        subject = "Dr. AI - Treatment Plan"
+
+        #Style this message for being sent to an email:
+        message = F"""
+            ### TREATMENT PLAN
+            Disease: {plan['Disease']}
+            Medication: {plan['Medication']}
+            Dosage: {plan['Dosage']}
+            Prevention: {plan['Prevention']}
+            Diet: {plan['Diet']}
+            \n
+            ### DIET PLAN 
+            1. Eat a balanced diet rich in fruits, vegetables, and lean proteins.
+            2. Limit intake of sugar and processed foods.
+            3. Monitor carbohydrate intake and follow a consistent meal schedule.
+            ### EXERCISE PLAN
+            1. Engage in moderate aerobic exercise for at least 30 minutes a day, 5 days a week.
+            2. Incorporate strength training exercises 2-3 times a week
+            3. Consult with a healthcare provider before starting any new exercise regimen.
+                """
+
+    text = f"Subject: {subject}\n\n{message}"
+
+    server = smtplib.SMTP("smtp.gmail.com", 587)
+    server.starttls()
+
+    server.login(sender_email, "kzpuyhvxqobzfsoj")
+
+    server.sendmail(sender_email, receiver_email, text)
 
 # Display statistics
 st.sidebar.title('DISEASE STATS')
