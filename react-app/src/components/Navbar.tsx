@@ -20,7 +20,7 @@ const Navbar = () => {
       </Text> */}
       <Image src={Logo} alt="Logo" width={90} height={90} />
       <HStack>
-        <Link>
+        <Link href="http://localhost:8502">
           <Code colorScheme="purple" children="Treatment Plan" />
         </Link>
         <Link href="http://localhost:8501">
