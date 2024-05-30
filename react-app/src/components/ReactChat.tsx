@@ -79,6 +79,7 @@ const ReactChat = () => {
           py={2}
           fontWeight={600}
           bg={item.name === "User" ? "#6b38fb" : "teal.300"}
+          color={item.name === "User" ? "white" : "black"}
           borderRadius="lg"
           maxWidth="70%"
         >
@@ -113,7 +114,7 @@ const ReactChat = () => {
         <DrawerOverlay />
         <DrawerContent>
           <DrawerCloseButton />
-          <DrawerHeader color={"teal.300"} fontWeight={800}>
+          <DrawerHeader color={"teal.300"} fontWeight={800} fontSize="2xl">
             Chat with Dr. AI
           </DrawerHeader>
 

@@ -68,7 +68,7 @@ const SignUp = () => {
         <ModalContent>
           <ModalHeader>
             <Text color="teal.200" fontWeight="bold" fontSize="x-large">
-              Create your account
+              Sign Up for Treatment
             </Text>
           </ModalHeader>
           <ModalCloseButton />

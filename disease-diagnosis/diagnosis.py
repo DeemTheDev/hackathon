@@ -26,7 +26,6 @@ with right_column:
 #Side Navigation Bar
 st.sidebar.title('Navigation')
 st.sidebar.link_button('Home', url="http://localhost:5173/")
-st.sidebar.button('Sign Out', "http://localhost:5173/")
 treatment =st.sidebar.link_button('Treatment Plan', "http://localhost:8502/")
 
 
