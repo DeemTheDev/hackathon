@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import LandingAnimation from "./components/LandingAnimation";
 import Chatbot from "./components/Chatbot";
+import ReactChat from "./components/ReactChat";
 import AnimatedText from "./components/AnimatedText";
 import BackendButtons from "./components/BackendButtons";
 import FooterContent from "./components/FooterContent";
@@ -41,7 +42,7 @@ function App() {
             <LandingAnimation />
           </Flex>
           <BackendButtons />
-          <Chatbot />
+          <ReactChat />
         </GridItem>
         {/*HERO SECTION*/}
         {/*FOOTER ...*/}
