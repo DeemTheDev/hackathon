@@ -6,11 +6,6 @@ from flask_login import current_user, login_required
 
 app = create_app()
 
-@app.route('/', methods=['GET', 'POST'])
-@login_required
-def home():
-    return current_user
-
 
 @app.post('/predict')
 def predict():
@@ -20,5 +15,4 @@ def predict():
     return jsonify(message)
 
 if __name__ == '__main__':
-    context=('cert.pem', 'key.pem')
-    app.run(debug=True, host='192.168.18.11', port=5000, ssl_context=context)
+    app.run(debug=True)
