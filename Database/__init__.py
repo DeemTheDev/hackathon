@@ -1,7 +1,6 @@
-from flask import Flask, request, jsonify
+from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from os import path
-from flask_login import LoginManager
 from flask_cors import CORS
 
 db = SQLAlchemy()
@@ -17,7 +16,7 @@ def create_database(app):
         print('Database already exists!')
 
 def create_app():
-    app = Flask(__name__, template_folder='chatbot/templates')
+    app = Flask(__name__)
     CORS(app)
     app.config['SECRET_KEY'] = 'dalziel'
 

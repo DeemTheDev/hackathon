@@ -14,7 +14,6 @@ import {
 } from "@chakra-ui/react";
 import { useDisclosure } from "@chakra-ui/react";
 import React, { useState } from "react";
-import axios from "axios";
 import { Alert, AlertIcon} from "@chakra-ui/react";
 
 const SignUp = () => {
