@@ -151,7 +151,7 @@ if st.sidebar.button('GET EMAIL'):
         #DR AI email:
         sender_email = "drai.rucvitualconsult@gmail.com"
         #Patients email: Get from dbs
-        receiver_email = "ziaeetechnologies@gmail.com"
+        receiver_email = "n.mohammed.ziaee@gmail.com"
 
         subject = "Dr. AI - Treatment Plan"
 
@@ -172,7 +172,16 @@ if st.sidebar.button('GET EMAIL'):
             1. Engage in moderate aerobic exercise for at least 30 minutes a day, 5 days a week.
             2. Incorporate strength training exercises 2-3 times a week
             3. Consult with a healthcare provider before starting any new exercise regimen.
-                """
+            \n
+            ###DISCLAIMER
+            While the system is designed to assist medical professionals, it is crucial to understand that it is intended for informational purposes only. 
+            All diagnoses and treatment plans must be confirmed and supervised by a qualified healthcare provider.
+
+            This applies to both medical professionals using the system and individuals who choose to utilize it forpersonal health information. 
+            Remember, a medical professional's expertise is irreplaceable, and their guidance is essential for making informed decisions about your 
+            health.
+            """
+        st.info("Email Sent...")
 
     text = f"Subject: {subject}\n\n{message}"
 
@@ -183,13 +192,4 @@ if st.sidebar.button('GET EMAIL'):
 
     server.sendmail(sender_email, receiver_email, text)
 
-# Display statistics
-st.sidebar.title('DISEASE STATS')
-stats = {
-    'HIV': 37,
-    'TB': 25,
-    'Diabetes': 10
-}
-for disease, percent in stats.items():
-    st.sidebar.write(f"{disease}: {percent}%")
-    st.sidebar.progress(percent / 100)
+
