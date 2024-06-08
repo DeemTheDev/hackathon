@@ -151,7 +151,7 @@ if st.sidebar.button('GET EMAIL'):
         #DR AI email:
         sender_email = "drai.rucvitualconsult@gmail.com"
         #Patients email: Get from dbs
-        receiver_email = "n.mohammed.ziaee@gmail.com"
+        #receiver_email = "n.mohammed.ziaee@gmail.com"
 
         subject = "Dr. AI - Treatment Plan"
 
